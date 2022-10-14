@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LookController : MonoBehaviour
 {
-    private float sensitivity = 100f;
+    private float sensitivity = 500f;
 
     public Transform playerBody;
 
