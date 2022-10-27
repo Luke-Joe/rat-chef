@@ -15,6 +15,7 @@ public class PlayerMoveController : MonoBehaviour
     public float jumpHeight = 0.003f;
 
     private bool isGrounded;
+    [SerializeField] private float pushForce = 10f;
 
     // Update is called once per frame
     void Update()
@@ -41,5 +42,15 @@ public class PlayerMoveController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody rb = hit.collider.attachedRigidbody;
+
+        if (rb != null && !rb.isKinematic)
+        {
+            rb.velocity = hit.moveDirection * pushForce;
+        }
     }
 }
