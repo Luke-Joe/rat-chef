@@ -27,5 +27,14 @@ public class CrosshairController : MonoBehaviour
         }
 
         crosshair.sizeDelta = new Vector2(currentSize, currentSize);
+
+        if (Input.GetButton("Fire2"))
+        {
+            crosshair.GetComponentInChildren<Image>().color = Color.green;
+        }
+        else
+        {
+            crosshair.GetComponentInChildren<Image>().color = Color.white;
+        }
     }
 }
