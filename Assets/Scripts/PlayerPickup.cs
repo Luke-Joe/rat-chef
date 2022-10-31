@@ -10,9 +10,8 @@ public class PlayerPickup : MonoBehaviour
 
     private GameObject heldObject;
     private Rigidbody heldObjectRb;
-    public float pickupForce = 10f;
-
-    public float pickupDistance = 2f;
+    public float pickupForce = 15f;
+    public float pickupDistance = 3f;
 
     private void Update()
     {
@@ -23,7 +22,6 @@ public class PlayerPickup : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, pickupDistance, pickupLayerMask))
                 {
-                    //Pickup object
                     PickupObject(hit.transform.gameObject);
                 }
             }
@@ -36,6 +34,10 @@ public class PlayerPickup : MonoBehaviour
         if (heldObject != null)
         {
             MoveObject();
+            // if (Input.GetButtonUp("Fire1"))
+            // {
+            //     DropObject();
+            // }
         }
 
         //Handle right click
