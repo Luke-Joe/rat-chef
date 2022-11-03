@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Ingredient
+[CreateAssetMenu(fileName = "New Ingredient")]
+public class Ingredient : ScriptableObject
 {
-    public string name;
+    public string ingredientName;
     public bool isCore;
     public int quantity;
     public int status;
