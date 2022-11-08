@@ -4,7 +4,7 @@ This is the repository for Team 14s Cooking Simulator Game.
 
 Currently, it is using Unity version 2021.3.11f1.
 
-##To access the repository on your machine:
+## To access the repository on your machine:
 
 - install and setup git (https://docs.github.com/en/get-started/quickstart/set-up-git)
 - clone the repo using the command
@@ -18,7 +18,7 @@ Currently, it is using Unity version 2021.3.11f1.
 
 - Launch the project
 
-##Branches:
+## Branches:
 
 - The main branch in this repository is, at the moment, an empty project.
 - As of now, the work for a prototype for the cooking simulator can be accessed in the demo branch
@@ -31,7 +31,7 @@ Currently, it is using Unity version 2021.3.11f1.
 - The scene should look something like the following:
   ![image](https://user-images.githubusercontent.com/22504724/200475149-dff9224a-008f-4628-8678-aecb3dbcb05d.png)
 
-##Project Management
+## Project Management
 
 - Tasks will be managed and distributed using Github Projects
 - The current issues and status' can be found at https://github.com/users/Luke-Joe/projects/1
