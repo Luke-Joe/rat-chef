@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class Rating : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Recipe recipe;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

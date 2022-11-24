@@ -7,4 +7,6 @@ public class Recipe : ScriptableObject
 {
     public string recipeName;
     public Ingredient[] ingredients;
+    public float maxScore;
+    public float time;
 }
