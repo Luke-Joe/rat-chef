@@ -30,9 +30,8 @@ public class Timer : MonoBehaviour
         minutes = Mathf.Floor(currentTime / 60);
         seconds = currentTime % 60;
 
-        countdown.text = minutes.ToString("0") + ":" + seconds.ToString("0");
+        countdown.text = minutes.ToString("0") + ":" + seconds.ToString("00");
 
-        Debug.Log("Minutes: " + minutes + "Seconds: " + seconds);
         if (currentTime <= 0)
         {
             currentTime = 0;

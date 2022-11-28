@@ -15,7 +15,7 @@ public class PlayerPickup : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             if (heldObject == null)
             {
@@ -27,18 +27,24 @@ public class PlayerPickup : MonoBehaviour
             }
             else
             {
+                // DropObject();
+                MoveObject();
+            }
+        }
+        else
+        {
+            if (heldObject != null)
+            {
                 DropObject();
+                // MoveObject();
+                // if (Input.GetButtonUp("Fire1"))
+                // {
+                //     DropObject();
+                // }
             }
         }
 
-        if (heldObject != null)
-        {
-            MoveObject();
-            // if (Input.GetButtonUp("Fire1"))
-            // {
-            //     DropObject();
-            // }
-        }
+
 
         //Handle right click
     }
