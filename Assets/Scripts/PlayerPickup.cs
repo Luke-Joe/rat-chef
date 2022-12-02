@@ -27,7 +27,6 @@ public class PlayerPickup : MonoBehaviour
             }
             else
             {
-                // DropObject();
                 MoveObject();
             }
         }
@@ -36,17 +35,10 @@ public class PlayerPickup : MonoBehaviour
             if (heldObject != null)
             {
                 DropObject();
-                // MoveObject();
-                // if (Input.GetButtonUp("Fire1"))
-                // {
-                //     DropObject();
-                // }
             }
         }
 
-
-
-        //Handle right click
+        //TODO: Handle right click
     }
 
     void PickupObject(GameObject pickObject)

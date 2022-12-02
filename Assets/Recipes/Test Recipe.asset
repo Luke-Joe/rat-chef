@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Test Recipe
   m_EditorClassIdentifier: 
   recipeName: Test
-  ingredients:
-  - {fileID: 11400000, guid: d436df63aedf3e149b217aaca61eb0ea, type: 2}
   maxScore: 100
   time: 100
