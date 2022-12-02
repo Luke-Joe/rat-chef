@@ -9,7 +9,7 @@ public class IngredientHandler : MonoBehaviour
     public string ingredientName;
     public bool isCore;
     public int quantity;
-    public int status;
+    public status state;
     public int value;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class IngredientHandler : MonoBehaviour
         this.ingredientName = ingredient.ingredientName;
         this.isCore = ingredient.isCore;
         this.quantity = ingredient.quantity;
-        this.status = ingredient.status;
+        this.state = ingredient.state;
         this.value = ingredient.value;
     }
 }
