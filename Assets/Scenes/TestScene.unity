@@ -837,7 +837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386072282}
   m_LocalRotation: {x: 0, y: 0, z: 0.30070576, w: 0.953717}
-  m_LocalPosition: {x: 7.94, y: 2.38, z: 8.45}
+  m_LocalPosition: {x: 7.94, y: 0, z: 8.45}
   m_LocalScale: {x: 15, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -934,7 +934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388610120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27442133, y: -0.5301235, z: -0.13042736}
+  m_LocalPosition: {x: 0.27442133, y: 1, z: -0.13042736}
   m_LocalScale: {x: 4, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1031,7 +1031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391995479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.99, y: -0.5301235, z: -0.13042736}
+  m_LocalPosition: {x: 6.99, y: 1, z: -0.13042736}
   m_LocalScale: {x: 5, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1582,11 +1582,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: d436df63aedf3e149b217aaca61eb0ea, type: 2}
-  ingredientName: 
+  ingredientName: Tomato
   isCore: 0
   quantity: 0
-  status: 0
+  state: 1
   value: 0
+  cookTime: 10
+  burnTime: 5
+  currCook: 0
+  currBurn: 0
 --- !u!54 &784131260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2269,8 +2273,9 @@ GameObject:
   - component: {fileID: 1780208115}
   - component: {fileID: 1780208114}
   - component: {fileID: 1780208113}
+  - component: {fileID: 1780208116}
   m_Layer: 6
-  m_Name: Cube (2)
+  m_Name: STOVE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2284,7 +2289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780208111}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.55, y: -0.5301235, z: -0.13042736}
+  m_LocalPosition: {x: -5.55, y: 1, z: -0.13042736}
   m_LocalScale: {x: 3, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2354,6 +2359,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780208111}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1780208116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780208111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a125933ff863e4345a0c2eed8ecaa249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1968994942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,7 +2563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113955708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27442133, y: 1.5301235, z: -9.918976}
+  m_LocalPosition: {x: -0.27442133, y: 0, z: -9.918976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2646,7 +2663,7 @@ GameObject:
   - component: {fileID: 2140653384}
   - component: {fileID: 2140653383}
   - component: {fileID: 2140653382}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2661,7 +2678,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140653380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27442133, y: -1.5301235, z: 9.918976}
+  m_LocalPosition: {x: 0.27442133, y: 0, z: 9.918976}
   m_LocalScale: {x: 40, y: 1, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []

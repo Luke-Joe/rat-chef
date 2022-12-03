@@ -15,5 +15,9 @@ MonoBehaviour:
   ingredientName: Tomato
   isCore: 1
   quantity: 1
-  status: 0
+  state: 1
   value: 1
+  cookTime: 10
+  burnTime: 5
+  currCook: 0
+  currBurn: 0
