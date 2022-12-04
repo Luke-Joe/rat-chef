@@ -44,13 +44,15 @@ public class PlayerMoveController : MonoBehaviour
         controller.Move(velocity);
     }
 
+    // Push any gameobjects that come into collision with the player. 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody rb = hit.collider.attachedRigidbody;
 
         if (rb != null && !rb.isKinematic)
         {
-            rb.velocity = hit.moveDirection * pushForce;
+            // rb.velocity = hit.moveDirection * pushForce;
+            rb.AddForce(hit.moveDirection * pushForce);
         }
     }
 }
