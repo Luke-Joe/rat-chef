@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoveTop : MonoBehaviour
+public class Pan : MonoBehaviour
 {
     public Transform stoveCheck;
     public float stoveDist = 0.4f;
@@ -11,6 +11,8 @@ public class StoveTop : MonoBehaviour
     private int isTurnedOn;
     private bool isOiled;
     private bool isHeated;
+    private bool onStove;
+    private Stove stove;
 
     // Start is called before the first frame update
     void Start()
@@ -21,23 +23,26 @@ public class StoveTop : MonoBehaviour
 
     void Update()
     {
-        isHeated = Physics.CheckSphere(stoveCheck.position, stoveDist, stoveMask); //COMBINE THIS CHECK WITH BOOL THAT CHECKS IF STOVE IS ON
+        onStove = Physics.CheckSphere(stoveCheck.transform.position, 0.4f);
+        Debug.Log("ON STOVE = " + onStove);
     }
 
     void OnCollisionStay(Collision other)
     {
+        checkStove(other);
         IngredientHandler obj = other.gameObject.GetComponent<IngredientHandler>();
 
-        if (obj != null && isHeated)
+        // If ingredient in pan is heated, cook it if the pan is oiled. If not oiled, burn it.
+        if (obj != null && onStove)
         {
-            if (isOiled && isHeated)
+            if (isOiled)
             {
                 switch (obj.state)
                 {
                     case status.raw:
                         if (obj.currCook < obj.cookTime)
                         {
-                            obj.currCook += Time.deltaTime;
+                            obj.currCook += Time.deltaTime * stove.power;
                             Debug.Log("Cooking " + other.gameObject.name + obj.currCook);
                         }
                         else
@@ -49,7 +54,7 @@ public class StoveTop : MonoBehaviour
                     case status.cooked:
                         if (obj.currBurn < obj.burnTime)
                         {
-                            obj.currBurn += Time.deltaTime;
+                            obj.currBurn += Time.deltaTime * stove.power;
                             Debug.Log("Burning " + other.gameObject.name + obj.currBurn);
                         }
                         else
@@ -71,6 +76,21 @@ public class StoveTop : MonoBehaviour
                     obj.state = status.burnt;
                 }
             }
+        }
+    }
+
+    //Checks if the pan is colliding with a stove 
+    void checkStove(Collision other)
+    {
+        stove = other.gameObject.GetComponent<Stove>();
+
+        if (stove != null)
+        {
+            onStove = true;
+        }
+        else
+        {
+            onStove = false;
         }
     }
 
