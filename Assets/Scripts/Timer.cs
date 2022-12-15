@@ -35,7 +35,6 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            Debug.Log("Out of Time");
         }
 
 

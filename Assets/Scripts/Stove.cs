@@ -5,17 +5,14 @@ using UnityEngine;
 public class Stove : MonoBehaviour
 {
     public int power;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        power = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        power = 1;
+        rb = this.GetComponent<Rigidbody>();
+        rb.sleepThreshold = 0.0f;
     }
 
     //TODO: Method that turns on the stove -> sets heat (?)
