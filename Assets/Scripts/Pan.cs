@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pan : MonoBehaviour
 {
+    //TODO: Pan should always land right side up/bounce into position/
+    //alternatively, provide dedicated keys for rotating objects
     public Transform stoveCheck;
     public float stoveDist = 0.4f;
     public LayerMask stoveMask;
@@ -17,13 +19,14 @@ public class Pan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isTurnedOn = 1;
+        isTurnedOn = 1;-0
         isOiled = false;
     }
 
     void Update()
     {
-        onStove = Physics.CheckSphere(stoveCheck.transform.position, 0.4f);
+        //TODO: Create separate tag for stovemask 
+        onStove = Physics.CheckSphere(stoveCheck.transform.position, 0.1f, stoveMask);
         Debug.Log("ON STOVE = " + onStove);
     }
 
