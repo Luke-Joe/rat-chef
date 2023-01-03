@@ -10,29 +10,25 @@ public class Pan : MonoBehaviour
     public float stoveDist = 0.4f;
     public LayerMask stoveMask;
 
-    private int isTurnedOn;
-    private bool isOiled;
-    private bool isHeated;
+    public int currTemp;
+    public bool isOiled;
     private bool onStove;
     private Stove stove;
 
     // Start is called before the first frame update
     void Start()
     {
-        isTurnedOn = 1;-0
-        isOiled = false;
+        currTemp = 0;
+        isOiled = true;
     }
 
     void Update()
     {
-        //TODO: Create separate tag for stovemask 
-        onStove = Physics.CheckSphere(stoveCheck.transform.position, 0.1f, stoveMask);
-        Debug.Log("ON STOVE = " + onStove);
+        checkStove();
     }
 
     void OnCollisionStay(Collision other)
     {
-        checkStove(other);
         IngredientHandler obj = other.gameObject.GetComponent<IngredientHandler>();
 
         // If ingredient in pan is heated, cook it if the pan is oiled. If not oiled, burn it.
@@ -45,7 +41,7 @@ public class Pan : MonoBehaviour
                     case status.raw:
                         if (obj.currCook < obj.cookTime)
                         {
-                            obj.currCook += Time.deltaTime * stove.power;
+                            obj.currCook += Time.deltaTime * currTemp;
                             Debug.Log("Cooking " + other.gameObject.name + obj.currCook);
                         }
                         else
@@ -57,7 +53,7 @@ public class Pan : MonoBehaviour
                     case status.cooked:
                         if (obj.currBurn < obj.burnTime)
                         {
-                            obj.currBurn += Time.deltaTime * stove.power;
+                            obj.currBurn += Time.deltaTime * currTemp;
                             Debug.Log("Burning " + other.gameObject.name + obj.currBurn);
                         }
                         else
@@ -82,18 +78,18 @@ public class Pan : MonoBehaviour
         }
     }
 
-    //Checks if the pan is colliding with a stove 
-    void checkStove(Collision other)
+    // Checks if the pan is colliding with a stove 
+    void checkStove()
     {
-        stove = other.gameObject.GetComponent<Stove>();
+        Collider[] hitCollider = Physics.OverlapSphere(stoveCheck.transform.position, 0.1f, stoveMask);
+        onStove = Physics.CheckSphere(stoveCheck.transform.position, 0.1f, stoveMask);
+        foreach (Collider collision in hitCollider) {
+            if (collision == null) {
+                stove = null;
+            }
 
-        if (stove != null)
-        {
-            onStove = true;
-        }
-        else
-        {
-            onStove = false;
+            stove = collision.gameObject.GetComponent<Stove>();
+            currTemp = stove.power;
         }
     }
 
