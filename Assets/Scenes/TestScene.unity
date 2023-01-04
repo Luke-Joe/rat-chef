@@ -2093,10 +2093,10 @@ MonoBehaviour:
   stoveDist: 0.1
   stoveMask:
     serializedVersion: 2
-    m_Bits: 320
-  isTurnedOn: 0
+    m_Bits: 256
+  currTemp: 0
   isOiled: 0
-  isHeated: 0
+  stove: {fileID: 0}
 --- !u!1 &1335466826
 GameObject:
   m_ObjectHideFlags: 0

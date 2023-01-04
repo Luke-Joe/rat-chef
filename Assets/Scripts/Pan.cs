@@ -12,7 +12,6 @@ public class Pan : MonoBehaviour
 
     public int currTemp;
     public bool isOiled;
-    private bool onStove;
     private Stove stove;
 
     // Start is called before the first frame update
@@ -32,7 +31,7 @@ public class Pan : MonoBehaviour
         IngredientHandler obj = other.gameObject.GetComponent<IngredientHandler>();
 
         // If ingredient in pan is heated, cook it if the pan is oiled. If not oiled, burn it.
-        if (obj != null && onStove)
+        if (obj != null && stove != null)
         {
             if (isOiled)
             {
@@ -82,16 +81,24 @@ public class Pan : MonoBehaviour
     void checkStove()
     {
         Collider[] hitCollider = Physics.OverlapSphere(stoveCheck.transform.position, 0.1f, stoveMask);
-        onStove = Physics.CheckSphere(stoveCheck.transform.position, 0.1f, stoveMask);
-        foreach (Collider collision in hitCollider) {
-            if (collision == null) {
-                stove = null;
-            }
 
-            stove = collision.gameObject.GetComponent<Stove>();
-            currTemp = stove.power;
+        if (hitCollider == null || hitCollider.Length == 0) {
+            // Pan is no longer on stove
+            stove = null;
+            currTemp = 0;
+        } else {
+            foreach (Collider collision in hitCollider) {
+                stove = collision.gameObject.GetComponent<Stove>();
+
+                currTemp = stove == null ? 0 : stove.power;
+            }
         }
+        
     }
 
-
+    //Oils pan
+    //TODO: decide on point when pan is no longer oiled (After ingredient cooks/burns)
+    public void oilPan() {
+        isOiled = true;
+    }
 }
