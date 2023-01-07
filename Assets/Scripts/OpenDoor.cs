@@ -35,7 +35,7 @@ public class OpenDoor : MonoBehaviour
             if (Action) {
                 Instruction.SetActive(false);
                 Animator anim = animationObject.GetComponent<Animator>();
-                anim.SetBool("isOn", !anim.GetBool("isOn"));
+                anim.SetBool("isActive", !anim.GetBool("isActive"));
             }
     }
 }
