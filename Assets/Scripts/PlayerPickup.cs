@@ -48,9 +48,9 @@ public class PlayerPickup : MonoBehaviour
             heldObjectRb = pickObject.GetComponent<Rigidbody>();
             heldObjectRb.useGravity = false;
             heldObjectRb.drag = 10;
-            heldObjectRb.constraints = RigidbodyConstraints.FreezeRotation;
+            heldObjectRb.angularDrag = 10;
+            // heldObjectRb.transform.parent = rightHandGrabPoint;
 
-            heldObjectRb.transform.parent = rightHandGrabPoint;
             heldObject = pickObject;
         }
     }
@@ -59,15 +59,14 @@ public class PlayerPickup : MonoBehaviour
     {
         heldObjectRb.useGravity = true;
         heldObjectRb.drag = 1;
-        heldObjectRb.constraints = RigidbodyConstraints.None;
+        heldObjectRb.angularDrag = 0.05f;
 
-        heldObjectRb.transform.parent = null;
         heldObject = null;
     }
 
     void MoveObject()
     {
-        if (Vector3.Distance(heldObject.transform.position, rightHandGrabPoint.position) > 0.1f)
+        if (Vector3.Distance(heldObject.transform.position, rightHandGrabPoint.position) > 0.3f)
         {
             Vector3 moveDirection = (rightHandGrabPoint.position - heldObject.transform.position);
 
