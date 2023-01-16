@@ -8,7 +8,6 @@ public class OpenDoor : MonoBehaviour
     [SerializeField] Transform playerCameraTransform;
     [SerializeField] LayerMask interactableLayerMask;
 
-    public GameObject animationObject;
     public GameObject Instruction;
     private bool Action = false;
     private float interactDistance = 3f;
@@ -22,21 +21,27 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out hit, interactDistance, interactableLayerMask)) {
-            Action = true;
+        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, interactDistance, interactableLayerMask)
+        && hit.collider.GetComponentInParent<Door>())
+        {
+            Door door = hit.collider.GetComponentInParent<Door>();
             Instruction.SetActive(true);
-        } else {
-            Action = false;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (door.isOpen)
+                {
+                    door.Close();
+                }
+                else
+                {
+                    door.Open();
+                }
+            }
+        }
+        else
+        {
             Instruction.SetActive(false);
         }
-        
-        if (Input.GetKeyDown(KeyCode.E)) {
-            if (Action) {
-                Instruction.SetActive(false);
-                Animator anim = animationObject.GetComponent<Animator>();
-                anim.SetBool("isActive", !anim.GetBool("isActive"));
-            }
     }
-}
 }

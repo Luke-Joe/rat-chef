@@ -11,10 +11,8 @@ public class Stove : MonoBehaviour
     void Start()
     {
         power = 1;
-        rb = this.GetComponent<Rigidbody>();
-        rb.sleepThreshold = 0.0f;
     }
-    
+
     //TODO: Method that turns on the stove -> sets heat (?)
     //TODO: Temperature slider
     //TODO: adjust cooking time depending on temperature

@@ -41,7 +41,6 @@ public class Pan : MonoBehaviour
                         if (obj.currCook < obj.cookTime)
                         {
                             obj.currCook += Time.deltaTime * currTemp;
-                            Debug.Log("Cooking " + other.gameObject.name + obj.currCook);
                         }
                         else
                         {
@@ -53,7 +52,6 @@ public class Pan : MonoBehaviour
                         if (obj.currBurn < obj.burnTime)
                         {
                             obj.currBurn += Time.deltaTime * currTemp;
-                            Debug.Log("Burning " + other.gameObject.name + obj.currBurn);
                         }
                         else
                         {
@@ -67,7 +65,6 @@ public class Pan : MonoBehaviour
                 if (obj.currBurn < obj.burnTime)
                 {
                     obj.currBurn += Time.deltaTime;
-                    Debug.Log("Burning " + other.gameObject.name + obj.currBurn);
                 }
                 else
                 {
@@ -82,23 +79,28 @@ public class Pan : MonoBehaviour
     {
         Collider[] hitCollider = Physics.OverlapSphere(stoveCheck.transform.position, 0.1f, stoveMask);
 
-        if (hitCollider == null || hitCollider.Length == 0) {
+        if (hitCollider == null || hitCollider.Length == 0)
+        {
             // Pan is no longer on stove
             stove = null;
             currTemp = 0;
-        } else {
-            foreach (Collider collision in hitCollider) {
+        }
+        else
+        {
+            foreach (Collider collision in hitCollider)
+            {
                 stove = collision.gameObject.GetComponent<Stove>();
 
                 currTemp = stove == null ? 0 : stove.power;
             }
         }
-        
+
     }
 
     //Oils pan
     //TODO: decide on point when pan is no longer oiled (After ingredient cooks/burns)
-    public void oilPan() {
+    public void oilPan()
+    {
         isOiled = true;
     }
 }

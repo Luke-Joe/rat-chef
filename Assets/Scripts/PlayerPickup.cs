@@ -48,8 +48,6 @@ public class PlayerPickup : MonoBehaviour
             heldObjectRb = pickObject.GetComponent<Rigidbody>();
             heldObjectRb.useGravity = false;
             heldObjectRb.drag = 10;
-            heldObjectRb.angularDrag = 10;
-            // heldObjectRb.transform.parent = rightHandGrabPoint;
 
             heldObject = pickObject;
         }
@@ -59,7 +57,6 @@ public class PlayerPickup : MonoBehaviour
     {
         heldObjectRb.useGravity = true;
         heldObjectRb.drag = 1;
-        heldObjectRb.angularDrag = 0.05f;
 
         heldObject = null;
     }
