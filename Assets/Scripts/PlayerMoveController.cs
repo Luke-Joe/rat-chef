@@ -10,7 +10,7 @@ public class PlayerMoveController : MonoBehaviour
     public Vector3 velocity;
     public LayerMask groundMask;
     public float groundDist = 0.4f;
-    public float speed = 12f;
+    public float speed = 5f;
     public float gravity = -3f;
     public float jumpHeight = 0.003f;
 

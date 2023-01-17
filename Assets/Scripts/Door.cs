@@ -39,7 +39,6 @@ public class Door : MonoBehaviour
     {
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation;
-        Debug.Log("OPEN: " + startRotation.eulerAngles.y);
         endRotation = Quaternion.Euler(new Vector3(0, startRotation.eulerAngles.y + rotationAmount, 0));
 
 
@@ -70,7 +69,6 @@ public class Door : MonoBehaviour
     private IEnumerator DoRotationClose()
     {
         Quaternion startRotation = transform.rotation;
-        Debug.Log("CLOSE: " + startRotation.eulerAngles.y);
         Quaternion endRotation = Quaternion.Euler(new Vector3(0, startRotation.eulerAngles.y - rotationAmount, 0));
 
 
