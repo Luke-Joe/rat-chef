@@ -8,7 +8,7 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private Transform rightHandGrabPoint;
     [SerializeField] private LayerMask pickupLayerMask;
 
-    private GameObject heldObject;
+    public GameObject heldObject;
     private Rigidbody heldObjectRb;
     public float pickupForce = 15f;
     public float pickupDistance = 3f;
@@ -57,6 +57,7 @@ public class PlayerPickup : MonoBehaviour
     {
         heldObjectRb.useGravity = true;
         heldObjectRb.drag = 1;
+        heldObjectRb.constraints = RigidbodyConstraints.None;
 
         heldObject = null;
     }

@@ -9,6 +9,7 @@ public class PourDetector : MonoBehaviour
     public int pourThreshold = 10;
     public Transform origin = null;
     public GameObject streamPrefab = null;
+    public float pourAngle = 0;
 
     private bool isPouring = false;
     private Stream currentStream = null;
@@ -34,14 +35,14 @@ public class PourDetector : MonoBehaviour
 
     void StartPour()
     {
-        // Empty
-        Debug.Log("Pouring");
+        currentStream = CreateStream();
+        currentStream.Begin();
     }
 
     void EndPour()
     {
-        // Empty
-        Debug.Log("End Pour");
+        currentStream.End();
+        currentStream = null;
     }
 
     private float CalculatePourAngle()
