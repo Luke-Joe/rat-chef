@@ -6,7 +6,10 @@ public class PlayerPour : MonoBehaviour
 {
     [SerializeField]
     private PlayerPickup playerPickup;
+    [SerializeField]
+    private float rotateSpeed;
     private GameObject heldObject;
+
 
     void Update()
     {
@@ -14,17 +17,29 @@ public class PlayerPour : MonoBehaviour
 
         if (heldObject != null && heldObject.GetComponent<PourDetector>())
         {
-            heldObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX;
-
             if (Input.GetButton("Fire2"))
             {
-                RotatePourable(heldObject.GetComponent<PourDetector>().pourAngle);
+                RotatePourable();
+            }
+            else
+            {
+                RevertRotation();
             }
         }
     }
 
-    void RotatePourable(float pourAngle)
+    void RotatePourable()
     {
-        //TODO: Rotate pourable object inwards until pourAngle
+        //NOTE: Attempted to make pour angle adjustable. I'm terrible with Vectors\Lin alg, so for now, it's just stuck at 45 downwards.
+        Quaternion startRotation = heldObject.transform.rotation;
+        Quaternion endRotation = Quaternion.LookRotation(-Camera.main.transform.forward, -Camera.main.transform.right - Camera.main.transform.up);
+        heldObject.transform.rotation = Quaternion.Slerp(startRotation, endRotation, rotateSpeed * Time.deltaTime);
+    }
+
+    void RevertRotation()
+    {
+        Quaternion startRotation = heldObject.transform.rotation;
+        Quaternion endRotation = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
+        heldObject.transform.rotation = Quaternion.Slerp(startRotation, endRotation, rotateSpeed * Time.deltaTime);
     }
 }

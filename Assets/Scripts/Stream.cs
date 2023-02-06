@@ -10,6 +10,9 @@ public class Stream : MonoBehaviour
     private Coroutine pourRoutine = null;
     private Vector3 targetPosition = Vector3.zero;
 
+    [SerializeField]
+    private float pourSpeed;
+
     void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -36,6 +39,7 @@ public class Stream : MonoBehaviour
 
             MoveToPosition(0, transform.position);
             MoveToPosition(1, targetPosition);
+
             yield return null;
         }
     }
@@ -52,7 +56,6 @@ public class Stream : MonoBehaviour
         {
             AnimateToPosition(0, targetPosition);
             AnimateToPosition(1, targetPosition);
-
             yield return null;
         }
 
@@ -62,7 +65,6 @@ public class Stream : MonoBehaviour
     Vector3 FindEndPoint()
     {
         RaycastHit hit;
-
         Ray ray = new Ray(transform.position, Vector3.down);
 
         Physics.Raycast(ray, out hit, 15f);
@@ -79,7 +81,7 @@ public class Stream : MonoBehaviour
     void AnimateToPosition(int index, Vector3 targetPosition)
     {
         Vector3 currentPoint = lineRenderer.GetPosition(index);
-        Vector3 newPosition = Vector3.MoveTowards(currentPoint, targetPosition, Time.deltaTime * 1.75f);
+        Vector3 newPosition = Vector3.MoveTowards(currentPoint, targetPosition, Time.deltaTime * pourSpeed);
         lineRenderer.SetPosition(index, newPosition);
     }
 
@@ -101,5 +103,10 @@ public class Stream : MonoBehaviour
             yield return null;
         }
 
+    }
+
+    void OnParticleCollision(GameObject other)
+    {
+        Debug.Log(other.gameObject.name);
     }
 }
