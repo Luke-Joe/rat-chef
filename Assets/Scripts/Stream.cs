@@ -13,6 +13,8 @@ public class Stream : MonoBehaviour
     [SerializeField]
     private float pourSpeed;
 
+    private GameObject collision;
+
     void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -68,6 +70,8 @@ public class Stream : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
 
         Physics.Raycast(ray, out hit, 15f);
+        CollisionHandler(hit.transform.gameObject);
+
         Vector3 endPoint = hit.collider ? hit.point : ray.GetPoint(15.0f);
 
         return endPoint;
@@ -105,8 +109,14 @@ public class Stream : MonoBehaviour
 
     }
 
-    void OnParticleCollision(GameObject other)
+    // TODO: Add additional events that happen on collision with other objects
+    void CollisionHandler(GameObject collision)
     {
-        Debug.Log(other.gameObject.name);
+        if (collision.GetComponent<Pan>() != null)
+        {
+            collision.GetComponent<Pan>().isOiled = true;
+        }
     }
+
+
 }

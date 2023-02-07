@@ -18,7 +18,7 @@ public class Pan : MonoBehaviour
     void Start()
     {
         currTemp = 0;
-        isOiled = true;
+        isOiled = false;
     }
 
     void Update()
@@ -30,6 +30,12 @@ public class Pan : MonoBehaviour
     {
         IngredientHandler obj = other.gameObject.GetComponent<IngredientHandler>();
 
+        heatObject(obj);
+    }
+
+    // Heats ingredients in pan. 
+    void heatObject(IngredientHandler obj)
+    {
         // If ingredient in pan is heated, cook it if the pan is oiled. If not oiled, burn it.
         if (obj != null && stove != null)
         {
@@ -94,11 +100,11 @@ public class Pan : MonoBehaviour
                 currTemp = stove == null ? 0 : stove.power;
             }
         }
-
     }
 
     //Oils pan
     //TODO: decide on point when pan is no longer oiled (After ingredient cooks/burns)
+    //      change oil into a float so it takes time to fully oil a pan. 
     public void oilPan()
     {
         isOiled = true;

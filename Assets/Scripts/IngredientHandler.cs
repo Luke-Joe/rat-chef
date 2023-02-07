@@ -33,8 +33,32 @@ public class IngredientHandler : MonoBehaviour
         rb.sleepThreshold = 0.0f;
     }
 
-    public void Cook()
+    void Update()
     {
+        //TODO: Check when ingredient switches state and call statushandler
+    }
 
+    void StatusHandler()
+    {
+        switch (this.state)
+        {
+            case status.raw:
+                break;
+            case status.cooked:
+                break;
+            case status.burnt:
+                BurnObject();
+                break;
+            case status.dirty:
+                break;
+        }
+    }
+
+    void BurnObject()
+    {
+        if (this.state == status.burnt)
+        {
+            this.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
+        }
     }
 }
