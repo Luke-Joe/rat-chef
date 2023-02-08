@@ -15,12 +15,9 @@ public class Ingredient : ScriptableObject
 {
 
     public string ingredientName;
-    public bool isCore;
     public int quantity;
     public status state;
     public int value;
     public float cookTime;
     public float burnTime;
-    public float currCook;
-    public float currBurn;
 }

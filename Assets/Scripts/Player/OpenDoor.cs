@@ -9,7 +9,6 @@ public class OpenDoor : MonoBehaviour
     [SerializeField] LayerMask interactableLayerMask;
 
     public GameObject Instruction;
-    private bool Action = false;
     private float interactDistance = 3f;
 
     // Start is called before the first frame update

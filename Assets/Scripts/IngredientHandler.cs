@@ -8,7 +8,6 @@ public class IngredientHandler : MonoBehaviour
     private Rigidbody rb;
 
     public string ingredientName;
-    public bool isCore;
     public int quantity;
     public status state;
     public int value;
@@ -16,12 +15,12 @@ public class IngredientHandler : MonoBehaviour
     public float burnTime;
     public float currCook;
     public float currBurn;
+    public ArrayList seasonings;
 
     // Start is called before the first frame update
     void Start()
     {
         this.ingredientName = ingredient.ingredientName;
-        this.isCore = ingredient.isCore;
         this.quantity = ingredient.quantity;
         this.state = ingredient.state;
         this.value = ingredient.value;
@@ -29,13 +28,14 @@ public class IngredientHandler : MonoBehaviour
         this.burnTime = ingredient.burnTime;
         this.currCook = 0;
         this.currBurn = 0;
+        this.seasonings = new ArrayList();
         rb = this.GetComponent<Rigidbody>();
         rb.sleepThreshold = 0.0f;
     }
 
     void Update()
     {
-        //TODO: Check when ingredient switches state and call statushandler
+        StatusHandler();
     }
 
     void StatusHandler()
