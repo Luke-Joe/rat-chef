@@ -6,6 +6,8 @@ public class Stream : MonoBehaviour
 {
     private LineRenderer lineRenderer = null;
     private ParticleSystem splashParticle = null;
+    [SerializeField]
+    private Ingredient ingredient;
 
     private Coroutine pourRoutine = null;
     private Vector3 targetPosition = Vector3.zero;
@@ -115,6 +117,24 @@ public class Stream : MonoBehaviour
         if (collision.GetComponent<Pan>() != null)
         {
             collision.GetComponent<Pan>().isOiled = true;
+        }
+
+        if (collision.GetComponent<IngredientHandler>() != null)
+        {
+            IngredientHandler ingredientFound = collision.GetComponent<IngredientHandler>();
+
+            if (ingredientFound.seasonings.ContainsKey(ingredient.name))
+            {
+                ingredientFound.seasonings.TryGetValue(ingredient.name, out Ingredient seasoning);
+                seasoning.quantity += 1;
+                Debug.Log(seasoning.ingredientName);
+            }
+            else
+            {
+                ingredientFound.seasonings.Add(ingredient.name, ingredient);
+            }
+
+
         }
     }
 

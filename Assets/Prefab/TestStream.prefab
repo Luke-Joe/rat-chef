@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 5238570228697279500}
   - component: {fileID: 1093856553666670358}
   m_Layer: 0
-  m_Name: Stream
+  m_Name: TestStream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4978,4 +4978,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc776952c84d6c41bb72854f86df4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredient: {fileID: 11400000, guid: d436df63aedf3e149b217aaca61eb0ea, type: 2}
   pourSpeed: 3

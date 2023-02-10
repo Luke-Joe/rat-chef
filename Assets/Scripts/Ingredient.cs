@@ -13,7 +13,6 @@ public enum status
 [CreateAssetMenu(fileName = "New Ingredient")]
 public class Ingredient : ScriptableObject
 {
-
     public string ingredientName;
     public int quantity;
     public status state;

@@ -15,7 +15,14 @@ public class IngredientHandler : MonoBehaviour
     public float burnTime;
     public float currCook;
     public float currBurn;
-    public ArrayList seasonings;
+    public Dictionary<string, Ingredient> seasonings;
+
+    // Constructor that takes in an ingredient
+    public IngredientHandler(Ingredient ingredient)
+    {
+        this.ingredient = ingredient;
+        Start();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +35,7 @@ public class IngredientHandler : MonoBehaviour
         this.burnTime = ingredient.burnTime;
         this.currCook = 0;
         this.currBurn = 0;
-        this.seasonings = new ArrayList();
+        this.seasonings = new Dictionary<string, Ingredient>();
         rb = this.GetComponent<Rigidbody>();
         rb.sleepThreshold = 0.0f;
     }
