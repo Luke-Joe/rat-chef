@@ -4834,7 +4834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5238570228697279503}
   - component: {fileID: 5238570228697279500}
-  - component: {fileID: 1093856553666670358}
+  - component: {fileID: 8726180455828456720}
   m_Layer: 0
   m_Name: TestStream
   m_TagString: Untagged
@@ -4966,7 +4966,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &1093856553666670358
+--- !u!114 &8726180455828456720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4978,5 +4978,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc776952c84d6c41bb72854f86df4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: d436df63aedf3e149b217aaca61eb0ea, type: 2}
-  pourSpeed: 3
+  pourSpeed: 5
+  seasoning: {fileID: 11400000, guid: 2188e577f868bc245b9aefecba69ad19, type: 2}

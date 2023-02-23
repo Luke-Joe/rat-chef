@@ -15,7 +15,7 @@ public class IngredientHandler : MonoBehaviour
     public float burnTime;
     public float currCook;
     public float currBurn;
-    public Dictionary<string, Ingredient> seasonings;
+    public Dictionary<string, Seasoning> seasonings;
 
     // Constructor that takes in an ingredient
     public IngredientHandler(Ingredient ingredient)
@@ -35,7 +35,7 @@ public class IngredientHandler : MonoBehaviour
         this.burnTime = ingredient.burnTime;
         this.currCook = 0;
         this.currBurn = 0;
-        this.seasonings = new Dictionary<string, Ingredient>();
+        this.seasonings = new Dictionary<string, Seasoning>();
         rb = this.GetComponent<Rigidbody>();
         rb.sleepThreshold = 0.0f;
     }

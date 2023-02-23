@@ -1858,7 +1858,7 @@ GameObject:
   - component: {fileID: 784131262}
   - component: {fileID: 784131261}
   - component: {fileID: 784131260}
-  - component: {fileID: 784131259}
+  - component: {fileID: 784131264}
   m_Layer: 7
   m_Name: Tomato
   m_TagString: Untagged
@@ -1881,27 +1881,6 @@ Transform:
   m_Father: {fileID: 1615576490}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &784131259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784131257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1958123042092d941a07e52dbee495a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredient: {fileID: 11400000, guid: d436df63aedf3e149b217aaca61eb0ea, type: 2}
-  ingredientName: Tomato
-  quantity: 0
-  state: 1
-  value: 0
-  cookTime: 10
-  burnTime: 5
-  currCook: 0
-  currBurn: 0
 --- !u!54 &784131260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1981,6 +1960,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784131257}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &784131264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784131257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1958123042092d941a07e52dbee495a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient: {fileID: 11400000, guid: d436df63aedf3e149b217aaca61eb0ea, type: 2}
+  ingredientName: 
+  quantity: 0
+  state: 0
+  value: 0
+  cookTime: 0
+  burnTime: 0
+  currCook: 0
+  currBurn: 0
 --- !u!1 &792326263
 GameObject:
   m_ObjectHideFlags: 0
