@@ -13,14 +13,14 @@ public class KnifeCollision : MonoBehaviour
         knifeAnim.enabled = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.GetComponent<IngredientHandler>() && playerCut.isAttacking)
+        if (collision.gameObject.GetComponent<IngredientHandler>() && collision.relativeVelocity.y > 2)
         {
-            Debug.Log(other.name);
-            if (other.GetComponent<Cuttable>())
+            Debug.Log(collision.gameObject.name);
+            if (collision.gameObject.GetComponent<Cuttable>())
             {
-                other.GetComponent<Cuttable>().Split();
+                collision.gameObject.GetComponent<Cuttable>().Split();
             }
         }
     }

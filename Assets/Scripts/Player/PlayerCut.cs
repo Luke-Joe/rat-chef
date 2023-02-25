@@ -25,16 +25,17 @@ public class PlayerCut : MonoBehaviour
 
         if (heldObject != null && heldObject.gameObject.tag == "Knife")
         {
+            MoveKnife(heldObject);
 
             if (!knifeHeld)
             {
                 PickupKnife(heldObject);
             }
 
-            if (Input.GetButton("Fire2") && canAttack)
-            {
-                Cut();
-            }
+            //     if (Input.GetButton("Fire2") && canAttack)
+            //     {
+            //         Cut();
+            //     }
 
         }
         else
@@ -43,13 +44,18 @@ public class PlayerCut : MonoBehaviour
         }
     }
 
+    void MoveKnife(GameObject heldObject)
+    {
+        heldObject.transform.rotation = Quaternion.LookRotation(Camera.main.transform.right, Camera.main.transform.forward);
+    }
+
     void PickupKnife(GameObject heldObject)
     {
         heldObjectRB = heldObject.GetComponent<Rigidbody>();
-        heldObject.transform.position = knifePosition.transform.position;
-        heldObject.transform.parent = knifePosition.transform;
-        heldObjectAnim = heldObject.GetComponent<Animator>();
-        heldObjectAnim.enabled = true;
+        heldObject.transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.forward);
+        // heldObject.transform.parent = knifePosition.transform;
+        // heldObjectAnim = heldObject.GetComponent<Animator>();
+        // heldObjectAnim.enabled = true;
         heldObjectRB.constraints = RigidbodyConstraints.FreezeRotation;
         heldObjectRB.useGravity = false;
         heldObjectRB.drag = 10;
@@ -58,45 +64,45 @@ public class PlayerCut : MonoBehaviour
 
     void DropKnife()
     {
-        foreach (Transform child in knifePosition.transform)
-        {
-            if (child.GetComponent<Rigidbody>() != null)
-            {
-                Rigidbody childRB = child.GetComponent<Rigidbody>();
-                childRB.constraints = RigidbodyConstraints.None;
-                childRB.useGravity = true;
-                childRB.drag = 1;
-                child.GetComponent<Animator>().enabled = false;
-            }
-            child.gameObject.transform.parent = null;
-        }
+        // foreach (Transform child in knifePosition.transform)
+        // {
+        //     if (child.GetComponent<Rigidbody>() != null)
+        //     {
+        //         Rigidbody childRB = child.GetComponent<Rigidbody>();
+        //         childRB.constraints = RigidbodyConstraints.None;
+        //         childRB.useGravity = true;
+        //         childRB.drag = 1;
+        //         child.GetComponent<Animator>().enabled = false;
+        //     }
+        //     child.gameObject.transform.parent = null;
+        // }
         knifeHeld = false;
     }
 
-    void Cut()
-    {
-        canAttack = false;
-        isAttacking = true;
-        // heldObjectAnim.enabled = true;
-        StartCoroutine(refreshAttackCooldown());
-        heldObjectAnim.SetTrigger("Attack");
-        //Plays cutting animation, sound, etc.
-    }
+    // void Cut()
+    // {
+    //     canAttack = false;
+    //     isAttacking = true;
+    //     // heldObjectAnim.enabled = true;
+    //     StartCoroutine(refreshAttackCooldown());
+    //     // heldObjectAnim.SetTrigger("Attack");
+    //     //Plays cutting animation, sound, etc.
+    // }
 
-    IEnumerator refreshAttackCooldown()
-    {
-        StartCoroutine(ResetAttackBool());
-        yield return new WaitForSeconds(attackCd);
-        canAttack = true;
-        heldObjectAnim.SetBool("Attack", false);
-        // heldObjectAnim.enabled = false;
-    }
+    // IEnumerator refreshAttackCooldown()
+    // {
+    //     StartCoroutine(ResetAttackBool());
+    //     yield return new WaitForSeconds(attackCd);
+    //     canAttack = true;
+    //     // heldObjectAnim.SetBool("Attack", false);
+    //     // heldObjectAnim.enabled = false;
+    // }
 
-    IEnumerator ResetAttackBool()
-    {
-        yield return new WaitForSeconds(attackCd);
-        isAttacking = false;
-    }
+    // IEnumerator ResetAttackBool()
+    // {
+    //     yield return new WaitForSeconds(attackCd);
+    //     isAttacking = false;
+    // }
 
 
 }

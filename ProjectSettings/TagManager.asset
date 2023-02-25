@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pan
   - Knife
+  - Floor
   layers:
   - Default
   - TransparentFX

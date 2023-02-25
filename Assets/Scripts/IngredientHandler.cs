@@ -16,6 +16,7 @@ public class IngredientHandler : MonoBehaviour
     public float currCook;
     public float currBurn;
     public Dictionary<string, Seasoning> seasonings;
+    private status previousState;
 
     // Constructor that takes in an ingredient
     public IngredientHandler(Ingredient ingredient)
@@ -66,6 +67,27 @@ public class IngredientHandler : MonoBehaviour
         if (this.state == status.burnt)
         {
             this.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
+        }
+    }
+
+    //Sets status of handler to dirty and makes appropriate visual changes
+    void DirtyObject()
+    {
+        this.previousState = this.state;
+        this.GetComponent<MeshRenderer>().material.color = Color.gray;
+        this.state = status.dirty;
+    }
+
+    void CleanObject()
+    {
+        this.state = this.previousState;
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Floor")
+        {
+            DirtyObject();
         }
     }
 }
