@@ -37,8 +37,6 @@ public class PlayerPickup : MonoBehaviour
                 DropObject();
             }
         }
-
-        //TODO: Handle right click
     }
 
     void PickupObject(GameObject pickObject)

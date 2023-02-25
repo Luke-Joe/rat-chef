@@ -38,6 +38,7 @@ public class Stream : MonoBehaviour
 
     IEnumerator BeginPour()
     {
+        Debug.Log("Pouring");
         while (gameObject.activeSelf)
         {
             targetPosition = FindEndPoint();
@@ -123,6 +124,8 @@ public class Stream : MonoBehaviour
         if (collision.GetComponent<IngredientHandler>() != null)
         {
             IngredientHandler ingredientFound = collision.GetComponent<IngredientHandler>();
+            Debug.Log(ingredientFound); // I don't know why but this line of code is needed otherwise an error occurs
+
             if (ingredientFound.seasonings.ContainsKey(seasoning.seasoningName))
             {
                 ingredientFound.seasonings.TryGetValue(seasoning.seasoningName, out Seasoning seasoningFound);
