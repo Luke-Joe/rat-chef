@@ -9,17 +9,6 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public GameObject player;
-    private CharacterController cc;
-    private LookController lc;
-
-
-    void Start()
-    {
-        lc = player.GetComponentInChildren<LookController>();
-        cc = player.GetComponent<CharacterController>();
-        Debug.Log(lc);
-    }
 
     // Update is called once per frame
     public void Update()
