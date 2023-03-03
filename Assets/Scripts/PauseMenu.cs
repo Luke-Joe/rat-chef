@@ -39,9 +39,9 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
          AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
-        // foreach (AudioSource a in audios) {
-        //     a.Play();
-        // }
+        foreach (AudioSource a in audios) {
+            a.Play();
+        }
     }
 
     void Pause() {
@@ -53,9 +53,9 @@ public class PauseMenu : MonoBehaviour
 
          AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
-        // foreach (AudioSource a in audios) {
-        //     a.Pause();
-        // }
+        foreach (AudioSource a in audios) {
+            a.Pause();
+        }
 
     }
     
