@@ -9,7 +9,17 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject player;
+    private CharacterController cc;
+    private LookController lc;
 
+
+    void Start()
+    {
+        lc = player.GetComponentInChildren<LookController>();
+        cc = player.GetComponent<CharacterController>();
+        Debug.Log(lc);
+    }
 
     // Update is called once per frame
     public void Update()
@@ -19,44 +29,53 @@ public class PauseMenu : MonoBehaviour
         // Debug.Log(activeScene);
         // if (activeScene != 0) {
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-                    Debug.Log("escape pressed");
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("escape pressed");
 
-            if (GameIsPaused) {
+            if (GameIsPaused)
+            {
                 Resume();
-            } else {
+            }
+            else
+            {
                 Pause();
             }
         }
         // }
     }
 
-    void Resume() {
+    void Resume()
+    {
         Debug.Log("resumed");
-
+        Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-         AudioSource[] audios = FindObjectsOfType<AudioSource>();
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
-        foreach (AudioSource a in audios) {
+        foreach (AudioSource a in audios)
+        {
             a.Play();
         }
     }
 
-    void Pause() {
-
+    void Pause()
+    {
+        Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
         Debug.Log("paused");
 
-         AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
-        foreach (AudioSource a in audios) {
+        AudioSource[] audios = FindObjectsOfType<AudioSource>();
+
+        foreach (AudioSource a in audios)
+        {
             a.Pause();
         }
 
     }
-    
+
 }
