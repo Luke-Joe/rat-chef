@@ -192,7 +192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 911db4c4544fc1e4f9af40467646b70f, type: 2}
+  - {fileID: 2100000, guid: 5a8e1afa345a81c4e8e87f0bd14e476a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -294,7 +294,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f7c9ccfed3ecb4f4e904c2ddcc5d14b7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 911db4c4544fc1e4f9af40467646b70f, type: 2}
+      objectReference: {fileID: 2100000, guid: 5a8e1afa345a81c4e8e87f0bd14e476a, type: 2}
     - target: {fileID: 919132149155446097, guid: f7c9ccfed3ecb4f4e904c2ddcc5d14b7, type: 3}
       propertyPath: m_Name
       value: CounterDoubleDoorL
@@ -395,7 +395,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f7c9ccfed3ecb4f4e904c2ddcc5d14b7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 911db4c4544fc1e4f9af40467646b70f, type: 2}
+      objectReference: {fileID: 2100000, guid: 5a8e1afa345a81c4e8e87f0bd14e476a, type: 2}
     - target: {fileID: 919132149155446097, guid: f7c9ccfed3ecb4f4e904c2ddcc5d14b7, type: 3}
       propertyPath: m_Name
       value: CounterDoubleDoorL (1)

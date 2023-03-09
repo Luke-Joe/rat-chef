@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8016527574493711121, guid: fe63bb14bc8b3504792da9cc1ac2a8b1, type: 3}
       propertyPath: m_Name
-      value: Table Blue
+      value: Table Blue Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8376854921843960516, guid: fe63bb14bc8b3504792da9cc1ac2a8b1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9419ab5636b16b542962181ff11f89bc, type: 2}
+      objectReference: {fileID: 2100000, guid: fb1ba708a4b1fcb4f9a22e631ecacb95, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe63bb14bc8b3504792da9cc1ac2a8b1, type: 3}
