@@ -1,7 +1,13 @@
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using System;
 public class LookController : MonoBehaviour
 {
     private float sensitivity = 300f;
@@ -9,6 +15,10 @@ public class LookController : MonoBehaviour
     public Transform playerBody;
 
     float xRotation = 0f;
+
+
+    // public bool GameIsPaused = false;
+    // public GameObject pauseMenuUI;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +37,7 @@ public class LookController : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+    
     }
 }
