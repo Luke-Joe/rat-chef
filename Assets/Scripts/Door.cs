@@ -15,6 +15,8 @@ public class Door : MonoBehaviour
 
     private Coroutine animationCoroutine;
 
+    private bool isMoving;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,18 +27,22 @@ public class Door : MonoBehaviour
     {
         if (!isOpen)
         {
-            if (animationCoroutine != null)
+            if (!isMoving)
             {
-                StopCoroutine(animationCoroutine);
-            }
+                if (animationCoroutine != null)
+                {
+                    StopCoroutine(animationCoroutine);
+                }
 
-            animationCoroutine = StartCoroutine(DoRotationOpen());
+                animationCoroutine = StartCoroutine(DoRotationOpen());
+            }
 
         }
     }
 
     private IEnumerator DoRotationOpen()
     {
+        isMoving = true;
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation;
         endRotation = Quaternion.Euler(new Vector3(0, startRotation.eulerAngles.y + rotationAmount, 0));
@@ -51,23 +57,28 @@ public class Door : MonoBehaviour
             yield return null;
             time += Time.deltaTime * speed;
         }
+        isMoving = false;
     }
 
     public void Close()
     {
         if (isOpen)
         {
-            if (animationCoroutine != null)
+            if (!isMoving)
             {
-                StopCoroutine(animationCoroutine);
-            }
+                if (animationCoroutine != null)
+                {
+                    StopCoroutine(animationCoroutine);
+                }
 
-            animationCoroutine = StartCoroutine(DoRotationClose());
+                animationCoroutine = StartCoroutine(DoRotationClose());
+            }
         }
     }
 
     private IEnumerator DoRotationClose()
     {
+        isMoving = true;
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation = Quaternion.Euler(new Vector3(0, startRotation.eulerAngles.y - rotationAmount, 0));
 
@@ -82,5 +93,6 @@ public class Door : MonoBehaviour
             time += Time.deltaTime * speed;
         }
 
+        isMoving = false;
     }
 }
