@@ -1,8 +1,95 @@
 fileFormatVersion: 2
-guid: dc8e42b2d868da440901eb4c9746adf4
+guid: c7c74ec0dac621c49a6cf08ab076ca5b
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 8487268191370126445
+    second: PanSkillet|BowlAction
+  - first:
+      74: 559914569528967355
+    second: PanSkillet|BowlAction.001
+  - first:
+      74: -3436803695243612936
+    second: PanSkillet|BowlAction.002
+  - first:
+      74: -6941707475039348690
+    second: PanSkillet|CactusAction
+  - first:
+      74: 6195357778317465285
+    second: PanSkillet|CactusAction.001
+  - first:
+      74: 4714906991195116937
+    second: PanSkillet|Counter.001Action
+  - first:
+      74: -5332998596120383743
+    second: PanSkillet|CounterDoor_Open
+  - first:
+      74: -4643027386430233094
+    second: PanSkillet|CounterDoor_Open.001
+  - first:
+      74: 6307187988398578463
+    second: PanSkillet|CounterDoor_OpenHalf
+  - first:
+      74: -6790579501809392067
+    second: PanSkillet|CounterDoor_OpenHalf.001
+  - first:
+      74: 3013600437198894700
+    second: PanSkillet|CounterDoubleDoor_Open
+  - first:
+      74: 2643895920090482519
+    second: PanSkillet|CounterDoubleDoor_OpenHalf
+  - first:
+      74: -6663528605308425508
+    second: PanSkillet|CounterSink_WaterRise
+  - first:
+      74: -3878608516608990084
+    second: PanSkillet|CounterSinkWaterAction
+  - first:
+      74: 1377947862997033265
+    second: PanSkillet|CylinderAction
+  - first:
+      74: 2872149806252497364
+    second: PanSkillet|Finish TableAction
+  - first:
+      74: 7765579474047056640
+    second: PanSkillet|FridgeDoor_Open
+  - first:
+      74: 2810726137535507385
+    second: PanSkillet|FridgeTopDoor_Open
+  - first:
+      74: 1926013554764542921
+    second: PanSkillet|Knife_ARMAction
+  - first:
+      74: 1097844793571416842
+    second: PanSkillet|PanAction
+  - first:
+      74: -6993080649750800474
+    second: PanSkillet|PanAction.001
+  - first:
+      74: 3163136530057785244
+    second: PanSkillet|PanAction.002
+  - first:
+      74: 715908909963646465
+    second: PanSkillet|PanAction.003
+  - first:
+      74: -4364127064548248128
+    second: PanSkillet|Plane.001Action
+  - first:
+      74: 1670649387527087682
+    second: PanSkillet|Plane.001Action.001
+  - first:
+      74: -7358751468146120413
+    second: PanSkillet|Plane.002Action
+  - first:
+      74: -534896212988305297
+    second: PanSkillet|Plate.001Action
+  - first:
+      74: 3668992611564173147
+    second: PanSkillet|Plate.001Action.001
+  - first:
+      74: 6619513994787935180
+    second: PanSkillet|TrashAction
   externalObjects: {}
   materials:
     materialImportMode: 2

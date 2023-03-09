@@ -1,8 +1,95 @@
 fileFormatVersion: 2
-guid: dc8e42b2d868da440901eb4c9746adf4
+guid: d73bb13b8f1c94541a3b527d50d3db88
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 8304296849750844589
+    second: CounterDoor MIR|BowlAction
+  - first:
+      74: -7135841031656237392
+    second: CounterDoor MIR|BowlAction.001
+  - first:
+      74: -6065683127557402142
+    second: CounterDoor MIR|BowlAction.002
+  - first:
+      74: -6929212023382245787
+    second: CounterDoor MIR|CactusAction
+  - first:
+      74: 8209188081661927586
+    second: CounterDoor MIR|CactusAction.001
+  - first:
+      74: -1795523885347517268
+    second: CounterDoor MIR|Counter.001Action
+  - first:
+      74: -7181253386142864709
+    second: CounterDoor MIR|CounterDoor_Open
+  - first:
+      74: 1765027766988875944
+    second: CounterDoor MIR|CounterDoor_Open.001
+  - first:
+      74: 3574409139996512376
+    second: CounterDoor MIR|CounterDoor_OpenHalf
+  - first:
+      74: -685478595658326852
+    second: CounterDoor MIR|CounterDoor_OpenHalf.001
+  - first:
+      74: 7549229315116516809
+    second: CounterDoor MIR|CounterDoubleDoor_Open
+  - first:
+      74: -7063746831396722940
+    second: CounterDoor MIR|CounterDoubleDoor_OpenHalf
+  - first:
+      74: -1221399549403553076
+    second: CounterDoor MIR|CounterSink_WaterRise
+  - first:
+      74: 8921906948364525776
+    second: CounterDoor MIR|CounterSinkWaterAction
+  - first:
+      74: 6678564967651152946
+    second: CounterDoor MIR|CylinderAction
+  - first:
+      74: 3856763672274766537
+    second: CounterDoor MIR|Finish TableAction
+  - first:
+      74: -4648240590398101643
+    second: CounterDoor MIR|FridgeDoor_Open
+  - first:
+      74: -6241392973520706811
+    second: CounterDoor MIR|FridgeTopDoor_Open
+  - first:
+      74: 6707347702101648628
+    second: CounterDoor MIR|Knife_ARMAction
+  - first:
+      74: 6976561927404015151
+    second: CounterDoor MIR|PanAction
+  - first:
+      74: 2624151959251062960
+    second: CounterDoor MIR|PanAction.001
+  - first:
+      74: -2633044453023558946
+    second: CounterDoor MIR|PanAction.002
+  - first:
+      74: 8795015488814422867
+    second: CounterDoor MIR|PanAction.003
+  - first:
+      74: -6333633256404968406
+    second: CounterDoor MIR|Plane.001Action
+  - first:
+      74: 162386601816247173
+    second: CounterDoor MIR|Plane.001Action.001
+  - first:
+      74: 8674741633341915792
+    second: CounterDoor MIR|Plane.002Action
+  - first:
+      74: -1830953459697261606
+    second: CounterDoor MIR|Plate.001Action
+  - first:
+      74: 1209999639662022655
+    second: CounterDoor MIR|Plate.001Action.001
+  - first:
+      74: -6006077363501933294
+    second: CounterDoor MIR|TrashAction
   externalObjects: {}
   materials:
     materialImportMode: 2

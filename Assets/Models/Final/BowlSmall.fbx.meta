@@ -1,8 +1,95 @@
 fileFormatVersion: 2
-guid: dc8e42b2d868da440901eb4c9746adf4
+guid: 0032e252a7f515549a8f89e7e5275a96
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 2989752590003806105
+    second: BowlSmall|BowlAction
+  - first:
+      74: -6213091461729153187
+    second: BowlSmall|BowlAction.001
+  - first:
+      74: -1716644579253154817
+    second: BowlSmall|BowlAction.002
+  - first:
+      74: -7545565837043967855
+    second: BowlSmall|CactusAction
+  - first:
+      74: 8145198271520842484
+    second: BowlSmall|CactusAction.001
+  - first:
+      74: 2608114095731711192
+    second: BowlSmall|Counter.001Action
+  - first:
+      74: -5238828138255272398
+    second: BowlSmall|CounterDoor_Open
+  - first:
+      74: 459176374369794130
+    second: BowlSmall|CounterDoor_Open.001
+  - first:
+      74: 1557457318738223348
+    second: BowlSmall|CounterDoor_OpenHalf
+  - first:
+      74: -5860074715768055455
+    second: BowlSmall|CounterDoor_OpenHalf.001
+  - first:
+      74: -3469228121153674091
+    second: BowlSmall|CounterDoubleDoor_Open
+  - first:
+      74: -3215016396378449109
+    second: BowlSmall|CounterDoubleDoor_OpenHalf
+  - first:
+      74: -3365522119001580102
+    second: BowlSmall|CounterSink_WaterRise
+  - first:
+      74: -3398800280089263908
+    second: BowlSmall|CounterSinkWaterAction
+  - first:
+      74: 6750678088721012803
+    second: BowlSmall|CylinderAction
+  - first:
+      74: -7702978499601278876
+    second: BowlSmall|Finish TableAction
+  - first:
+      74: 4007935719613532866
+    second: BowlSmall|FridgeDoor_Open
+  - first:
+      74: 3247641641820724296
+    second: BowlSmall|FridgeTopDoor_Open
+  - first:
+      74: -3957992579049083044
+    second: BowlSmall|Knife_ARMAction
+  - first:
+      74: -3155125535115033944
+    second: BowlSmall|PanAction
+  - first:
+      74: 5573485863374134935
+    second: BowlSmall|PanAction.001
+  - first:
+      74: 6347486451807396489
+    second: BowlSmall|PanAction.002
+  - first:
+      74: 4438128455289128339
+    second: BowlSmall|PanAction.003
+  - first:
+      74: -245334889408165015
+    second: BowlSmall|Plane.001Action
+  - first:
+      74: 2407441538137339311
+    second: BowlSmall|Plane.001Action.001
+  - first:
+      74: 6787775614145777845
+    second: BowlSmall|Plane.002Action
+  - first:
+      74: 1128530695520116636
+    second: BowlSmall|Plate.001Action
+  - first:
+      74: -2433744797585768431
+    second: BowlSmall|Plate.001Action.001
+  - first:
+      74: -8917685431034791512
+    second: BowlSmall|TrashAction
   externalObjects: {}
   materials:
     materialImportMode: 2

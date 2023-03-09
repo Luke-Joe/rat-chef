@@ -1,8 +1,95 @@
 fileFormatVersion: 2
-guid: dc8e42b2d868da440901eb4c9746adf4
+guid: 9684e1ab79c631844928bb51ea006fab
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 5322626049961556640
+    second: PlateSmall|BowlAction
+  - first:
+      74: -6735912474378857748
+    second: PlateSmall|BowlAction.001
+  - first:
+      74: 7909969538223520403
+    second: PlateSmall|BowlAction.002
+  - first:
+      74: 4493656117715574370
+    second: PlateSmall|CactusAction
+  - first:
+      74: -4849737211892903801
+    second: PlateSmall|CactusAction.001
+  - first:
+      74: -6973871859733013586
+    second: PlateSmall|Counter.001Action
+  - first:
+      74: -5351441216305230108
+    second: PlateSmall|CounterDoor_Open
+  - first:
+      74: -6907054559857451526
+    second: PlateSmall|CounterDoor_Open.001
+  - first:
+      74: -7772062432136905185
+    second: PlateSmall|CounterDoor_OpenHalf
+  - first:
+      74: 4463681880246258007
+    second: PlateSmall|CounterDoor_OpenHalf.001
+  - first:
+      74: -7087190411133927606
+    second: PlateSmall|CounterDoubleDoor_Open
+  - first:
+      74: -2305418045090083101
+    second: PlateSmall|CounterDoubleDoor_OpenHalf
+  - first:
+      74: 1214003125727301557
+    second: PlateSmall|CounterSink_WaterRise
+  - first:
+      74: 5633042295725796760
+    second: PlateSmall|CounterSinkWaterAction
+  - first:
+      74: -6269856914982190234
+    second: PlateSmall|CylinderAction
+  - first:
+      74: -7618664002116026614
+    second: PlateSmall|Finish TableAction
+  - first:
+      74: 7779734873428677217
+    second: PlateSmall|FridgeDoor_Open
+  - first:
+      74: 4607255469445711761
+    second: PlateSmall|FridgeTopDoor_Open
+  - first:
+      74: -822784746265714406
+    second: PlateSmall|Knife_ARMAction
+  - first:
+      74: -946382921666593157
+    second: PlateSmall|PanAction
+  - first:
+      74: 7406848314255013271
+    second: PlateSmall|PanAction.001
+  - first:
+      74: -3304472491973217480
+    second: PlateSmall|PanAction.002
+  - first:
+      74: 8608221678187488628
+    second: PlateSmall|PanAction.003
+  - first:
+      74: -4375748778633744960
+    second: PlateSmall|Plane.001Action
+  - first:
+      74: 5112886678352478340
+    second: PlateSmall|Plane.001Action.001
+  - first:
+      74: 4175714877189512656
+    second: PlateSmall|Plane.002Action
+  - first:
+      74: -1018608576424156210
+    second: PlateSmall|Plate.001Action
+  - first:
+      74: -6205583930331620789
+    second: PlateSmall|Plate.001Action.001
+  - first:
+      74: -6815292314015168759
+    second: PlateSmall|TrashAction
   externalObjects: {}
   materials:
     materialImportMode: 2

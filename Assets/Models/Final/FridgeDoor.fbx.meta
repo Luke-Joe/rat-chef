@@ -1,8 +1,95 @@
 fileFormatVersion: 2
-guid: dc8e42b2d868da440901eb4c9746adf4
+guid: a93218dbc0f7a40438b9e20472647428
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 1161186153210028566
+    second: FridgeDoor|BowlAction
+  - first:
+      74: -4943204694702106370
+    second: FridgeDoor|BowlAction.001
+  - first:
+      74: -2985452039019054272
+    second: FridgeDoor|BowlAction.002
+  - first:
+      74: -8983515172973104922
+    second: FridgeDoor|CactusAction
+  - first:
+      74: 2206933023917050620
+    second: FridgeDoor|CactusAction.001
+  - first:
+      74: -3833855292737304572
+    second: FridgeDoor|Counter.001Action
+  - first:
+      74: -6685901213037602215
+    second: FridgeDoor|CounterDoor_Open
+  - first:
+      74: 5383578342177086210
+    second: FridgeDoor|CounterDoor_Open.001
+  - first:
+      74: -5379179571771892176
+    second: FridgeDoor|CounterDoor_OpenHalf
+  - first:
+      74: 8077332753244082467
+    second: FridgeDoor|CounterDoor_OpenHalf.001
+  - first:
+      74: 733954311622147879
+    second: FridgeDoor|CounterDoubleDoor_Open
+  - first:
+      74: 2455574391431545814
+    second: FridgeDoor|CounterDoubleDoor_OpenHalf
+  - first:
+      74: -3383711517833342388
+    second: FridgeDoor|CounterSink_WaterRise
+  - first:
+      74: -3790044921818982305
+    second: FridgeDoor|CounterSinkWaterAction
+  - first:
+      74: -8975590867070569885
+    second: FridgeDoor|CylinderAction
+  - first:
+      74: 8008614748389617425
+    second: FridgeDoor|Finish TableAction
+  - first:
+      74: 7531564160989177862
+    second: FridgeDoor|FridgeDoor_Open
+  - first:
+      74: -3128651954843560869
+    second: FridgeDoor|FridgeTopDoor_Open
+  - first:
+      74: -855294313103368756
+    second: FridgeDoor|Knife_ARMAction
+  - first:
+      74: -285177622121547641
+    second: FridgeDoor|PanAction
+  - first:
+      74: 7331241875125757801
+    second: FridgeDoor|PanAction.001
+  - first:
+      74: 6507787046052945716
+    second: FridgeDoor|PanAction.002
+  - first:
+      74: 9179276897624402287
+    second: FridgeDoor|PanAction.003
+  - first:
+      74: -1427288685162412186
+    second: FridgeDoor|Plane.001Action
+  - first:
+      74: 977042590925085992
+    second: FridgeDoor|Plane.001Action.001
+  - first:
+      74: -203997394837112061
+    second: FridgeDoor|Plane.002Action
+  - first:
+      74: -4559300307375716661
+    second: FridgeDoor|Plate.001Action
+  - first:
+      74: 4727098914717827107
+    second: FridgeDoor|Plate.001Action.001
+  - first:
+      74: -2286924858916816199
+    second: FridgeDoor|TrashAction
   externalObjects: {}
   materials:
     materialImportMode: 2
