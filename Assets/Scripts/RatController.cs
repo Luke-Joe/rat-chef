@@ -10,8 +10,10 @@ public class RatController : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Transform ratMouth;
     [SerializeField] private Transform home;
+    [SerializeField] private Transform despawnZone;
 
     private bool hasFood;
+    private bool isCompleted;
     private Vector3 movePosition;
     private GameObject heldObject;
 
@@ -24,13 +26,16 @@ public class RatController : MonoBehaviour
     private float vertRange;
     [SerializeField]
     private float patrolTime;
+    [SerializeField]
+    private float ratThrowForce;
     private float currPatrolTime;
 
     public enum MoveState
     {
         searching,
         chasing,
-        returning
+        returning,
+        completed
     }
 
     private MoveState state;
@@ -48,6 +53,12 @@ public class RatController : MonoBehaviour
 
     void StateCheck()
     {
+        if (isCompleted)
+        {
+            state = MoveState.completed;
+            return;
+        }
+
         if (!hasFood)
         {
             if (food == null || food.position.y > vertRange)
@@ -80,14 +91,19 @@ public class RatController : MonoBehaviour
                 break;
             case MoveState.chasing:
                 movePosition = food.position;
-                ChaseTarget(movePosition);
                 break;
             case MoveState.returning:
                 movePosition = home.position;
-                ChaseTarget(movePosition);
                 MoveFood();
+                CompletionCheck();
+                break;
+            case MoveState.completed:
+                movePosition = despawnZone.position;
+                DespawnCheck();
                 break;
         }
+
+        ChaseTarget(movePosition);
     }
 
     void Look()
@@ -111,13 +127,29 @@ public class RatController : MonoBehaviour
 
             if (RandomPoint(transform.position, range, out point))
             {
-                Debug.Log(point);
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
-                ChaseTarget(point);
+                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
             }
         }
 
         currPatrolTime -= Time.deltaTime;
+    }
+
+    void CompletionCheck()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            DropFood();
+            isCompleted = true;
+        }
+    }
+
+    void DespawnCheck()
+    {
+        Debug.Log(Vector3.Distance(gameObject.transform.position, despawnZone.position));
+        if (Vector3.Distance(gameObject.transform.position, despawnZone.position) < 0.5f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)
@@ -175,6 +207,7 @@ public class RatController : MonoBehaviour
         Rigidbody foodRb = heldObject.GetComponent<Rigidbody>();
         foodRb.useGravity = true;
         foodRb.isKinematic = false;
+        foodRb.AddForce(transform.forward * ratThrowForce, ForceMode.Impulse);
         heldObject.transform.SetParent(null);
         heldObject = null;
     }

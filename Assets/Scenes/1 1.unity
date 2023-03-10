@@ -387,6 +387,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9019207616769145669, guid: 76f70124ec1cae7478856d44a67fb1ac, type: 3}
   m_PrefabInstance: {fileID: 1711378764}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &454215026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454215027}
+  m_Layer: 0
+  m_Name: DespawnZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &454215027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454215026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.399, y: 0.5713862, z: 9.217163}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &454919835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8142874482915996629, guid: 8fe867e9b0765cd439efcfab5448db75, type: 3}
@@ -688,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4167375898556505492, guid: 90fb69f5e9128464fb9c29252095a78f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.18
+      value: 7.63
       objectReference: {fileID: 0}
     - target: {fileID: 4167375898556505492, guid: 90fb69f5e9128464fb9c29252095a78f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1354,10 +1385,12 @@ MonoBehaviour:
   rotationSpeed: 3
   ratMouth: {fileID: 1538772013}
   home: {fileID: 902238889}
+  despawnZone: {fileID: 454215027}
   range: 5
   sightRange: 5
   vertRange: 1
   patrolTime: 5
+  ratThrowForce: 0
 --- !u!4 &1122604899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2531361103610701838, guid: 0d8734fc43aca4b468af13531ec8f2af, type: 3}
