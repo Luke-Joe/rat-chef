@@ -302,11 +302,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90fb69f5e9128464fb9c29252095a78f, type: 3}
---- !u!4 &71972602 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4167375898556505492, guid: 90fb69f5e9128464fb9c29252095a78f, type: 3}
-  m_PrefabInstance: {fileID: 71972601}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &134621826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2912389902337618612, guid: 0d8734fc43aca4b468af13531ec8f2af, type: 3}
@@ -455,7 +450,7 @@ GameObject:
   - component: {fileID: 285960375}
   - component: {fileID: 285960377}
   - component: {fileID: 285960376}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +492,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb8547c839cdfbb469606b823fc71c29, type: 2}
+  - {fileID: 2100000, guid: 3c99f4224404aaf4a8b67d0c54a3190b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -543,7 +538,7 @@ GameObject:
   - component: {fileID: 410029206}
   - component: {fileID: 410029208}
   - component: {fileID: 410029207}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412330062}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,7 +1659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093788477}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RatMouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1827,7 +1822,7 @@ GameObject:
   - component: {fileID: 1139112693}
   - component: {fileID: 1139112695}
   - component: {fileID: 1139112694}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1869,7 +1864,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb8547c839cdfbb469606b823fc71c29, type: 2}
+  - {fileID: 2100000, guid: 3c99f4224404aaf4a8b67d0c54a3190b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2100,7 +2095,7 @@ GameObject:
   - component: {fileID: 1331742291}
   - component: {fileID: 1331742290}
   - component: {fileID: 1331742294}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Boey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2187,14 +2182,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949dbe60b640abe41aedd1e79445c02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 71972602}
+  food: {fileID: 0}
   rotationSpeed: 5
   ratMouth: {fileID: 1093788477}
   home: {fileID: 1155279333}
   range: 5
   sightRange: 5
   vertRange: 1
-  ratThrowForce: 5
+  ratThrowForce: 4
 --- !u!1001 &1365361450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2354,7 +2349,7 @@ GameObject:
   - component: {fileID: 1477474211}
   - component: {fileID: 1477474213}
   - component: {fileID: 1477474212}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2396,7 +2391,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb8547c839cdfbb469606b823fc71c29, type: 2}
+  - {fileID: 2100000, guid: 3c99f4224404aaf4a8b67d0c54a3190b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2473,7 +2468,7 @@ GameObject:
   - component: {fileID: 1600995753}
   - component: {fileID: 1600995755}
   - component: {fileID: 1600995754}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Boey : MonoBehaviour
+public class Benny : MonoBehaviour
 {
     private NavMeshAgent agent;
     public Transform food;
@@ -65,7 +65,7 @@ public class Boey : MonoBehaviour
         switch (state)
         {
             case MoveState.searching:
-                Search();
+                movePosition = home.position;
                 Look();
                 break;
             case MoveState.chasing:
@@ -74,6 +74,7 @@ public class Boey : MonoBehaviour
             case MoveState.returning:
                 movePosition = home.position;
                 MoveFood();
+                Look();
                 CompletionCheck();
                 break;
         }
@@ -94,43 +95,12 @@ public class Boey : MonoBehaviour
         }
     }
 
-    void Search()
-    {
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
-            Vector3 point;
-
-            if (RandomPoint(transform.position, range, out point))
-            {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-            }
-        }
-    }
-
     void CompletionCheck()
     {
-        Debug.Log(agent.remainingDistance);
         if (Vector3.Distance(home.transform.position, gameObject.transform.position) <= 2.5f)
         {
             DropFood();
         }
-    }
-
-    bool RandomPoint(Vector3 center, float range, out Vector3 result)
-    {
-        for (int i = 0; i < 30; i++)
-        {
-            Vector3 randomPoint = center + Random.insideUnitSphere * range;
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-            {
-                result = hit.position;
-                return true;
-            }
-        }
-
-        result = Vector3.zero;
-        return false;
     }
 
     void ChaseTarget(Vector3 target)
