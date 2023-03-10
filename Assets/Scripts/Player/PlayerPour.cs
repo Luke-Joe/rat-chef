@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerPour : MonoBehaviour
 {
     [SerializeField]
-    private PlayerPickup playerPickup;
-    [SerializeField]
     private float rotateSpeed;
     private GameObject heldObject;
+    private PlayerPickup playerPickup;
 
+    void Start()
+    {
+        playerPickup = this.GetComponent<PlayerPickup>();
+    }
 
     void Update()
     {

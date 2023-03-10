@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerPickup : MonoBehaviour
     private Rigidbody heldObjectRb;
     public float pickupForce = 15f;
     public float pickupDistance = 3f;
+    private bool holdingRat = false;
 
     private void Update()
     {
@@ -41,6 +43,7 @@ public class PlayerPickup : MonoBehaviour
 
     void PickupObject(GameObject pickObject)
     {
+
         if (pickObject.GetComponent<Rigidbody>())
         {
             heldObjectRb = pickObject.GetComponent<Rigidbody>();
@@ -49,14 +52,16 @@ public class PlayerPickup : MonoBehaviour
 
             heldObject = pickObject;
         }
+
+        RatPickup();
     }
 
     void DropObject()
     {
+        RatDrop();
         heldObjectRb.useGravity = true;
         heldObjectRb.drag = 1;
         heldObjectRb.constraints = RigidbodyConstraints.None;
-
         heldObject = null;
     }
 
@@ -67,6 +72,28 @@ public class PlayerPickup : MonoBehaviour
             Vector3 moveDirection = (rightHandGrabPoint.position - heldObject.transform.position);
 
             heldObjectRb.AddForce(moveDirection * pickupForce);
+        }
+    }
+
+    void RatPickup()
+    {
+
+        if (heldObject.GetComponent<RatController>())
+        {
+            holdingRat = true;
+            heldObject.GetComponent<NavMeshAgent>().enabled = false;
+            heldObject.GetComponent<RatController>().DropFood();
+            heldObject.GetComponent<RatController>().enabled = false;
+        }
+    }
+
+    void RatDrop()
+    {
+        if (holdingRat)
+        {
+            heldObject.GetComponent<NavMeshAgent>().enabled = true;
+            heldObject.GetComponent<RatController>().enabled = true;
+            holdingRat = false;
         }
     }
 }
