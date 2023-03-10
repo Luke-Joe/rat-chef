@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class RatController : MonoBehaviour
+public class Boey : MonoBehaviour
 {
     private NavMeshAgent agent;
     public Transform food;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Transform ratMouth;
     [SerializeField] private Transform home;
-    [SerializeField] private Transform despawnZone;
 
     private bool hasFood;
-    private bool isCompleted;
     private Vector3 movePosition;
     private GameObject heldObject;
 
@@ -21,16 +19,13 @@ public class RatController : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float sightRange;
     [SerializeField] private float vertRange;
-    [SerializeField] private float patrolTime;
     [SerializeField] private float ratThrowForce;
-    private float currPatrolTime;
 
     public enum MoveState
     {
         searching,
         chasing,
-        returning,
-        completed
+        returning
     }
 
     private MoveState state;
@@ -48,22 +43,11 @@ public class RatController : MonoBehaviour
 
     void StateCheck()
     {
-        if (isCompleted)
-        {
-            state = MoveState.completed;
-            return;
-        }
-
         if (!hasFood)
         {
             if (food == null || food.position.y > vertRange)
             {
                 state = MoveState.searching;
-
-                if (currPatrolTime <= 0.0f)
-                {
-                    state = MoveState.returning;
-                }
             }
             else
             {
@@ -91,10 +75,6 @@ public class RatController : MonoBehaviour
                 movePosition = home.position;
                 MoveFood();
                 CompletionCheck();
-                break;
-            case MoveState.completed:
-                movePosition = despawnZone.position;
-                DespawnCheck();
                 break;
         }
 
@@ -125,25 +105,14 @@ public class RatController : MonoBehaviour
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
             }
         }
-
-        currPatrolTime -= Time.deltaTime;
     }
 
     void CompletionCheck()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        Debug.Log(agent.remainingDistance);
+        if (Vector3.Distance(home.transform.position, gameObject.transform.position) <= 2.5f)
         {
             DropFood();
-            isCompleted = true;
-        }
-    }
-
-    void DespawnCheck()
-    {
-        Debug.Log(Vector3.Distance(gameObject.transform.position, despawnZone.position));
-        if (Vector3.Distance(gameObject.transform.position, despawnZone.position) < 0.5f)
-        {
-            Destroy(gameObject);
         }
     }
 
