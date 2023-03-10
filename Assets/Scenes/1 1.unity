@@ -1319,7 +1319,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 0.25
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2406,15 +2406,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1760287132094874790, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.01563
+      value: 4.25
       objectReference: {fileID: 0}
     - target: {fileID: 1760287132094874790, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000010728836
+      value: 1.932
       objectReference: {fileID: 0}
     - target: {fileID: 1760287132094874790, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.49614
+      value: 9.07
       objectReference: {fileID: 0}
     - target: {fileID: 1760287132094874790, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2447,6 +2447,18 @@ PrefabInstance:
     - target: {fileID: 1760287132094874791, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
       propertyPath: m_Name
       value: Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298932221771808346, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298932221771808346, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298932221771808346, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04c13423b8e7d004aaf1a8f74c4e7724, type: 3}

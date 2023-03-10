@@ -15,6 +15,14 @@ public class RatController : MonoBehaviour
     private Vector3 movePosition;
     private GameObject heldObject;
 
+    public enum MoveState
+    {
+        searching,
+        chasing,
+        returning
+    }
+
+    private MoveState state;
 
     void Start()
     {
@@ -23,17 +31,44 @@ public class RatController : MonoBehaviour
 
     void Update()
     {
+        StateCheck();
+        StateHandler();
+        SeekTarget(movePosition);
+    }
+
+    void StateCheck()
+    {
         if (!hasFood)
         {
-            movePosition = food.transform.position;
+            if (food == null)
+            {
+                state = MoveState.searching;
+            }
+            else
+            {
+                state = MoveState.chasing;
+            }
         }
         else
         {
-            movePosition = home.position;
-            MoveFood();
+            state = MoveState.returning;
         }
+    }
 
-        SeekTarget(movePosition);
+    void StateHandler()
+    {
+        switch (state)
+        {
+            case MoveState.searching:
+                break;
+            case MoveState.chasing:
+                movePosition = food.transform.position;
+                break;
+            case MoveState.returning:
+                movePosition = home.position;
+                MoveFood();
+                break;
+        }
     }
 
     void SeekTarget(Vector3 target)
