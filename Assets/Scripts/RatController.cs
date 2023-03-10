@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class RatController : MonoBehaviour
 {
     private NavMeshAgent agent;
-    public IngredientHandler food;
+    public Transform food;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Transform ratMouth;
     [SerializeField] private Transform home;
@@ -14,6 +14,17 @@ public class RatController : MonoBehaviour
     private bool hasFood;
     private Vector3 movePosition;
     private GameObject heldObject;
+
+    [Header("Patrolling")]
+    [SerializeField]
+    private float range;
+    [SerializeField]
+    private float sightRange;
+    [SerializeField]
+    private float vertRange;
+    [SerializeField]
+    private float patrolTime;
+    private float currPatrolTime;
 
     public enum MoveState
     {
@@ -33,16 +44,20 @@ public class RatController : MonoBehaviour
     {
         StateCheck();
         StateHandler();
-        SeekTarget(movePosition);
     }
 
     void StateCheck()
     {
         if (!hasFood)
         {
-            if (food == null)
+            if (food == null || food.position.y > vertRange)
             {
                 state = MoveState.searching;
+
+                if (currPatrolTime <= 0.0f)
+                {
+                    state = MoveState.returning;
+                }
             }
             else
             {
@@ -60,18 +75,69 @@ public class RatController : MonoBehaviour
         switch (state)
         {
             case MoveState.searching:
+                Search();
+                Look();
                 break;
             case MoveState.chasing:
-                movePosition = food.transform.position;
+                movePosition = food.position;
+                ChaseTarget(movePosition);
                 break;
             case MoveState.returning:
                 movePosition = home.position;
+                ChaseTarget(movePosition);
                 MoveFood();
                 break;
         }
     }
 
-    void SeekTarget(Vector3 target)
+    void Look()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, sightRange);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.GetComponent<IngredientHandler>() != null && hitCollider.transform.position.y < vertRange)
+            {
+                food = hitCollider.gameObject.transform;
+            }
+        }
+    }
+
+    void Search()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            Vector3 point;
+
+            if (RandomPoint(transform.position, range, out point))
+            {
+                Debug.Log(point);
+                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                ChaseTarget(point);
+            }
+        }
+
+        currPatrolTime -= Time.deltaTime;
+    }
+
+    bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            Vector3 randomPoint = center + Random.insideUnitSphere * range;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                result = hit.position;
+                return true;
+            }
+        }
+
+        result = Vector3.zero;
+        return false;
+    }
+
+    void ChaseTarget(Vector3 target)
     {
         agent.destination = target;
         Vector3 lookDir = target - transform.position + new Vector3(0, 0, 0);
