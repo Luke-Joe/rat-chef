@@ -6,6 +6,8 @@ public class IngredientHandler : MonoBehaviour
 {
     public Ingredient ingredient;
     private Rigidbody rb;
+    public SFXPlaying source;
+
 
     public string ingredientName;
     public int quantity;
@@ -66,7 +68,10 @@ public class IngredientHandler : MonoBehaviour
     {
         if (this.state == status.burnt)
         {
+            Debug.Log("here");
+
             this.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
+            // s.PlayA();
         }
     }
 
@@ -76,6 +81,7 @@ public class IngredientHandler : MonoBehaviour
         this.previousState = this.state;
         this.GetComponent<MeshRenderer>().material.color = Color.gray;
         this.state = status.dirty;
+        source.PlayBad();
     }
 
     void CleanObject()
