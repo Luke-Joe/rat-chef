@@ -15,8 +15,16 @@ public class SFXPlaying : MonoBehaviour
 
     public AudioSource WeirdDream;
 
-    // public void Start() {
+    public void Start() {
+        WeirdDream.PlayDelayed(30.0f);
 
+    }
+
+    // public void Update() {
+    //     // WeirdDream.PlayDelayed(6.0f);
+    //     WeirdDream.Play();
+
+    //     Debug.Log("Here");
     // }
 
 
@@ -34,7 +42,6 @@ public class SFXPlaying : MonoBehaviour
         } else {
             WhatWasThat.Play();
         }
-        // ReallyTricky.Play();
     }
 
     public void PlayPractice() {
