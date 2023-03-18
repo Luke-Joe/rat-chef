@@ -6,6 +6,8 @@ public class Shatter : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject destroyedVersion;
+    public SFXPlaying source;
+
     // void OnMouseDown() {
     //     Debug.Log("here");
     //     Instantiate(destroyedVersion, transform.position, transform.rotation);
@@ -15,9 +17,10 @@ public class Shatter : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-       if (col.gameObject.name == "Plane") {
+       if (col.gameObject.name == "Floor") {
             Instantiate(destroyedVersion, transform.position, transform.rotation);
             Destroy(gameObject);
+            source.PlayBad();
         }
     }
 
