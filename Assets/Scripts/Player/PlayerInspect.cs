@@ -9,6 +9,7 @@ public class PlayerInspect : MonoBehaviour
     private GameObject heldObject;
     private LookController lc;
     private bool isInspecting;
+    [SerializeField] private Transform rightHandGrabPoint;
     public float rotateSpeed = 1f;
     private Camera cam;
 
@@ -28,13 +29,15 @@ public class PlayerInspect : MonoBehaviour
     {
         heldObject = pp.heldObject;
 
-        if (Input.GetButton("Fire2") && heldObject != null && !heldObject.GetComponent<KnifeCollision>() && !heldObject.GetComponent<PourDetector>())
+        if (Input.GetButton("Fire2") && heldObject != null && !heldObject.GetComponent<PourDetector>())
         {
             float x = Input.GetAxis("Mouse X") * rotateSpeed;
             float y = Input.GetAxis("Mouse Y") * rotateSpeed;
 
             heldObject.transform.Rotate(-cam.transform.up * x, Space.World);
             heldObject.transform.Rotate(cam.transform.right * y, Space.World);
+
+            rightHandGrabPoint.transform.rotation = heldObject.transform.rotation;
 
             isInspecting = true;
             lc.enabled = false;

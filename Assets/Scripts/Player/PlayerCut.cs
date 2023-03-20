@@ -25,12 +25,16 @@ public class PlayerCut : MonoBehaviour
 
         if (heldObject != null && heldObject.gameObject.tag == "Knife")
         {
-            MoveKnife(heldObject);
-
             if (!knifeHeld)
             {
                 PickupKnife(heldObject);
             }
+
+            if (Vector3.Distance(heldObject.transform.position, knifePosition.transform.position) < 1f)
+            {
+                // MoveKnife(heldObject);
+            }
+
 
             //     if (Input.GetButton("Fire2") && canAttack)
             //     {
@@ -44,15 +48,10 @@ public class PlayerCut : MonoBehaviour
         }
     }
 
-    void MoveKnife(GameObject heldObject)
-    {
-        heldObject.transform.rotation = Quaternion.LookRotation(Camera.main.transform.right, Camera.main.transform.forward);
-    }
-
     void PickupKnife(GameObject heldObject)
     {
         heldObjectRB = heldObject.GetComponent<Rigidbody>();
-        heldObject.transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.forward);
+        // heldObject.transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.forward);
         // heldObject.transform.parent = knifePosition.transform;
         // heldObjectAnim = heldObject.GetComponent<Animator>();
         // heldObjectAnim.enabled = true;

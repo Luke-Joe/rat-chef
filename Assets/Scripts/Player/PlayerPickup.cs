@@ -72,6 +72,11 @@ public class PlayerPickup : MonoBehaviour
             Vector3 moveDirection = (rightHandGrabPoint.position - heldObject.transform.position);
 
             heldObjectRb.AddForce(moveDirection * pickupForce);
+
+            if (heldObject.GetComponent<PourDetector>() == null)
+            {
+                heldObject.transform.rotation = rightHandGrabPoint.transform.rotation;
+            }
         }
     }
 
