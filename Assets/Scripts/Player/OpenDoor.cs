@@ -20,21 +20,23 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, interactDistance, interactableLayerMask)
-        && hit.collider.GetComponentInParent<Door>())
+        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, interactDistance, interactableLayerMask))
         {
-            Door door = hit.collider.GetComponentInParent<Door>();
-            Instruction.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.E))
+            if (hit.collider.GetComponentInParent<Door>())
             {
-                if (door.isOpen)
+                Door door = hit.collider.GetComponentInParent<Door>();
+                Instruction.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    door.Close();
-                }
-                else
-                {
-                    door.Open();
+                    if (door.isOpen)
+                    {
+                        door.Close();
+                    }
+                    else
+                    {
+                        door.Open();
+                    }
                 }
             }
         }

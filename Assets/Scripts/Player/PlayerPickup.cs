@@ -67,7 +67,7 @@ public class PlayerPickup : MonoBehaviour
 
     void MoveObject()
     {
-        if (Vector3.Distance(heldObject.transform.position, rightHandGrabPoint.position) > 0.1f)
+        if (Vector3.Distance(heldObject.transform.position, rightHandGrabPoint.position) > 0.01f)
         {
             Vector3 moveDirection = (rightHandGrabPoint.position - heldObject.transform.position);
 
