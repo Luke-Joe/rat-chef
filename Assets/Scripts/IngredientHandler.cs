@@ -82,11 +82,14 @@ public class IngredientHandler : MonoBehaviour
         if (this.state != status.dirty)
         {
             this.previousState = this.state;
+            source.PlayBad();
+
         }
 
         this.GetComponent<MeshRenderer>().material.color = Color.gray;
         this.state = status.dirty;
         // source.PlayBad();
+        // source.PlayPractice();
     }
 
     public void CleanObject()
