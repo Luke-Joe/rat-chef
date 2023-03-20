@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class PlayerPickup : MonoBehaviour
 {
     [SerializeField] private Transform playerCameraTransform;
-    [SerializeField] private Transform rightHandGrabPoint;
+    [SerializeField] private Transform grabPoint;
     [SerializeField] private LayerMask pickupLayerMask;
 
     public GameObject heldObject;
@@ -43,6 +43,7 @@ public class PlayerPickup : MonoBehaviour
 
     void PickupObject(GameObject pickObject)
     {
+        grabPoint.transform.rotation = pickObject.transform.rotation;
 
         if (pickObject.GetComponent<Rigidbody>())
         {
@@ -58,25 +59,28 @@ public class PlayerPickup : MonoBehaviour
 
     void DropObject()
     {
-        RatDrop();
         heldObjectRb.useGravity = true;
         heldObjectRb.drag = 1;
         heldObjectRb.constraints = RigidbodyConstraints.None;
         heldObject = null;
+
+        RatDrop();
     }
 
     void MoveObject()
     {
-        if (Vector3.Distance(heldObject.transform.position, rightHandGrabPoint.position) > 0.01f)
+        if (Vector3.Distance(heldObject.transform.position, grabPoint.position) > 0.01f)
         {
-            Vector3 moveDirection = (rightHandGrabPoint.position - heldObject.transform.position);
+            Vector3 moveDirection = (grabPoint.position - heldObject.transform.position);
 
             heldObjectRb.AddForce(moveDirection * pickupForce);
 
-            if (heldObject.GetComponent<PourDetector>() == null)
+            if (heldObject.GetComponent<PourDetector>() != null)
             {
-                heldObject.transform.rotation = rightHandGrabPoint.transform.rotation;
+                return;
             }
+
+            heldObject.transform.rotation = grabPoint.transform.rotation;
         }
     }
 

@@ -5,15 +5,16 @@ using UnityEngine.EventSystems;
 
 public class PlayerInspect : MonoBehaviour
 {
+    public float rotateSpeed = 1f;
+
+    [SerializeField] private Transform grabPoint;
     private PlayerPickup pp;
     private GameObject heldObject;
     private LookController lc;
     private bool isInspecting;
-    [SerializeField] private Transform rightHandGrabPoint;
-    public float rotateSpeed = 1f;
+    private bool isRotating;
     private Camera cam;
 
-    // Start is called before the first frame update
     void Start()
     {
         pp = GetComponent<PlayerPickup>();
@@ -21,15 +22,14 @@ public class PlayerInspect : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
 
         isInspecting = false;
-        heldObject = pp.heldObject;
+        isRotating = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         heldObject = pp.heldObject;
 
-        if (Input.GetButton("Fire2") && heldObject != null && !heldObject.GetComponent<PourDetector>())
+        if (Input.GetButton("Fire2") && !isRotating && heldObject != null && !heldObject.GetComponent<PourDetector>())
         {
             float x = Input.GetAxis("Mouse X") * rotateSpeed;
             float y = Input.GetAxis("Mouse Y") * rotateSpeed;
@@ -37,23 +37,29 @@ public class PlayerInspect : MonoBehaviour
             heldObject.transform.Rotate(-cam.transform.up * x, Space.World);
             heldObject.transform.Rotate(cam.transform.right * y, Space.World);
 
-            rightHandGrabPoint.transform.rotation = heldObject.transform.rotation;
-
             isInspecting = true;
             lc.enabled = false;
-            // Debug.Log("I WANT TO ROTATE THE HELD OBJECT");
+            grabPoint.transform.rotation = heldObject.transform.rotation;
         }
         else
         {
-            isInspecting = false;
-            lc.enabled = true;
+            if (Input.GetKey(KeyCode.R) && heldObject != null && !heldObject.GetComponent<PourDetector>() && !isInspecting)
+            {
+                lc.enabled = false;
+
+                float x = Input.GetAxis("Mouse X") * rotateSpeed;
+
+                heldObject.transform.Rotate(-cam.transform.forward * x, Space.World);
+
+                isRotating = true;
+                grabPoint.transform.rotation = heldObject.transform.rotation;
+            }
+            else
+            {
+                isRotating = false;
+                isInspecting = false;
+                lc.enabled = true;
+            }
         }
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        Debug.Log("Rotating");
-        heldObject.transform.eulerAngles = new Vector3(eventData.delta.y, -eventData.delta.x);
-
     }
 }

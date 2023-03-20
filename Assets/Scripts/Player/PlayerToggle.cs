@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenDoor : MonoBehaviour
+public class PlayerToggle : MonoBehaviour
 {
-    // NOTE: Make sure initial parameter id for all toggleable objects checks if its on
+    // NOTE: Make sure initial parameter id for all toggleable objects checks if its on (??? I have no idea what this means now)
     [SerializeField] Transform playerCameraTransform;
     [SerializeField] LayerMask interactableLayerMask;
 
@@ -22,27 +22,32 @@ public class OpenDoor : MonoBehaviour
     {
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, interactDistance, interactableLayerMask))
         {
-            if (hit.collider.GetComponentInParent<Door>())
-            {
-                Door door = hit.collider.GetComponentInParent<Door>();
-                Instruction.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (door.isOpen)
-                    {
-                        door.Close();
-                    }
-                    else
-                    {
-                        door.Open();
-                    }
-                }
-            }
+            ToggleDoor(hit);
         }
         else
         {
             Instruction.SetActive(false);
+        }
+    }
+
+    void ToggleDoor(RaycastHit hit)
+    {
+        if (hit.collider.GetComponentInParent<Door>())
+        {
+            Door door = hit.collider.GetComponentInParent<Door>();
+            Instruction.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (door.isOpen)
+                {
+                    door.Close();
+                }
+                else
+                {
+                    door.Open();
+                }
+            }
         }
     }
 }

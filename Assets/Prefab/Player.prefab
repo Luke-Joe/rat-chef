@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5054696212060550732
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5054696212060550723}
-  m_Layer: 0
-  m_Name: KnifeGrabPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5054696212060550723
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5054696212060550732}
-  m_LocalRotation: {x: -0, y: -0.05415277, z: -0, w: 0.99853265}
-  m_LocalPosition: {x: 0.39, y: -0.25, z: 1.39}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5054696213497265220}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -6.208, z: 0}
 --- !u!1 &5054696212099918461
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +15,7 @@ GameObject:
   - component: {fileID: 5054696212099918455}
   - component: {fileID: 5054696212099918454}
   - component: {fileID: 5054696212099918453}
+  - component: {fileID: 3130524651310735366}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -131,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCameraTransform: {fileID: 5054696213497265220}
-  rightHandGrabPoint: {fileID: 5054696213875170775}
+  grabPoint: {fileID: 5054696213875170775}
   pickupLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -150,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb2519167640354a83b9e2753780559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPickup: {fileID: 5054696212099918460}
   rotateSpeed: 3
 --- !u!114 &5054696212099918454
 MonoBehaviour:
@@ -182,10 +151,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPickup: {fileID: 5054696212099918460}
-  knifePosition: {fileID: 5054696212060550732}
-  canAttack: 1
-  attackCd: 0.5
-  isAttacking: 0
+--- !u!114 &3130524651310735366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054696212099918461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9fc2b793056054b91763f9a56fd05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 1
+  grabPoint: {fileID: 5054696213875170775}
 --- !u!1 &5054696212489578593
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +294,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5054696213875170775}
-  - {fileID: 5054696212060550723}
   m_Father: {fileID: 5054696212099918449}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

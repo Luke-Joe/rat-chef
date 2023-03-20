@@ -60,6 +60,7 @@ public class IngredientHandler : MonoBehaviour
                 BurnObject();
                 break;
             case status.dirty:
+                DirtyObject();
                 break;
         }
     }
@@ -76,15 +77,19 @@ public class IngredientHandler : MonoBehaviour
     }
 
     //Sets status of handler to dirty and makes appropriate visual changes
-    void DirtyObject()
+    public void DirtyObject()
     {
-        this.previousState = this.state;
+        if (this.state != status.dirty)
+        {
+            this.previousState = this.state;
+        }
+
         this.GetComponent<MeshRenderer>().material.color = Color.gray;
         this.state = status.dirty;
-        source.PlayBad();
+        // source.PlayBad();
     }
 
-    void CleanObject()
+    public void CleanObject()
     {
         this.state = this.previousState;
     }
