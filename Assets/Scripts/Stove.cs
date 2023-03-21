@@ -18,22 +18,30 @@ public class Stove : MonoBehaviour
         // changeStoveColour();
     }
 
-    void OnMouseDown() {
+    public void KnobToggle()
+    {
         Debug.Log("clicked knob");
-        if (power == 0) {
+        if (power == 0)
+        {
             power = 1;
             changeStoveColour();
-        } else {
+        }
+        else
+        {
             power = 0;
             changeStoveColour();
         }
     }
 
-    void changeStoveColour() {
+    void changeStoveColour()
+    {
 
-        if (power == 1) {
+        if (power == 1)
+        {
             s.GetComponent<Renderer>().material = Red;
-        } else {
+        }
+        else
+        {
             // GetComponent<Renderer>().material = stoveMaterial;
             s.GetComponent<Renderer>().material = stoveMaterial;
 

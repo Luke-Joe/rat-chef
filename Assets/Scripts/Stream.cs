@@ -120,23 +120,6 @@ public class Stream : MonoBehaviour
         {
             collision.GetComponent<Pan>().isOiled = true;
         }
-
-        if (collision.GetComponent<IngredientHandler>() != null)
-        {
-            IngredientHandler ingredientFound = collision.GetComponent<IngredientHandler>();
-            Debug.Log(ingredientFound); // I don't know why but this line of code is needed otherwise an error occurs
-
-            if (ingredientFound.seasonings.ContainsKey(seasoning.seasoningName))
-            {
-                ingredientFound.seasonings.TryGetValue(seasoning.seasoningName, out Seasoning seasoningFound);
-                seasoningFound.quantity += 1;
-                Debug.Log(seasoningFound.quantity + seasoningFound.seasoningName);
-            }
-            else
-            {
-                ingredientFound.seasonings.Add(seasoning.seasoningName, seasoning);
-            }
-        }
     }
 }
 
