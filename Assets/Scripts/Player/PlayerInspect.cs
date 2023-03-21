@@ -29,7 +29,7 @@ public class PlayerInspect : MonoBehaviour
     {
         heldObject = pp.heldObject;
 
-        if (Input.GetButton("Fire2") && !isRotating && heldObject != null && !heldObject.GetComponent<PourDetector>())
+        if (Input.GetButton("Fire2") && !isRotating && heldObject != null)
         {
             float x = Input.GetAxis("Mouse X") * rotateSpeed;
             float y = Input.GetAxis("Mouse Y") * rotateSpeed;
@@ -43,7 +43,7 @@ public class PlayerInspect : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(KeyCode.R) && heldObject != null && !heldObject.GetComponent<PourDetector>() && !isInspecting)
+            if (Input.GetKey(KeyCode.R) && heldObject != null && !isInspecting)
             {
                 lc.enabled = false;
 

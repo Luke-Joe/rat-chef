@@ -22,6 +22,8 @@ public class PlayerToggle : MonoBehaviour
     {
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit hit, interactDistance, interactableLayerMask))
         {
+            Instruction.SetActive(true);
+            ToggleStove(hit);
             ToggleDoor(hit);
         }
         else
@@ -30,12 +32,24 @@ public class PlayerToggle : MonoBehaviour
         }
     }
 
+    void ToggleStove(RaycastHit hit)
+    {
+        if (hit.collider.GetComponent<Stove>() != null)
+        {
+            Stove st = hit.collider.GetComponent<Stove>();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                st.KnobToggle();
+            }
+        }
+    }
+
     void ToggleDoor(RaycastHit hit)
     {
         if (hit.collider.GetComponentInParent<Door>())
         {
             Door door = hit.collider.GetComponentInParent<Door>();
-            Instruction.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.E))
             {

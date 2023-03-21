@@ -22,11 +22,11 @@ public class PlayerPour : MonoBehaviour
         {
             if (Input.GetButton("Fire2"))
             {
-                RotatePourable();
+                // RotatePourable();
             }
             else
             {
-                RevertRotation();
+                // RevertRotation();
             }
         }
     }
