@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: 33d7c7a8f196f964eaf9d63a24ac3f75
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: 8930063577637080708
+    second: Plate Med|BowlAction
+  - first:
+      74: 2004645766501642139
+    second: Plate Med|BowlAction.001
+  - first:
+      74: 3384881345914189568
+    second: Plate Med|BowlAction.002
+  - first:
+      74: -6643084423493057878
+    second: Plate Med|CactusAction
+  - first:
+      74: -1236071806963348784
+    second: Plate Med|CactusAction.001
+  - first:
+      74: -3189728055819262349
+    second: Plate Med|Cereal_meshAction
+  - first:
+      74: 2966198744725266066
+    second: Plate Med|CoffeeCup_meshAction
+  - first:
+      74: 2787764980787341480
+    second: Plate Med|Counter.001Action
+  - first:
+      74: 6314537627798535287
+    second: Plate Med|Counter.001Action.001
+  - first:
+      74: -7408920595404419455
+    second: Plate Med|CounterAction
+  - first:
+      74: 457921847361400195
+    second: Plate Med|CounterDoor_Open
+  - first:
+      74: 3856344867991995068
+    second: Plate Med|CounterDoor_Open.001
+  - first:
+      74: -5302333395695141944
+    second: Plate Med|CounterDoor_OpenHalf
+  - first:
+      74: 3903533991162785902
+    second: Plate Med|CounterDoor_OpenHalf.001
+  - first:
+      74: -3886165469048141315
+    second: Plate Med|CounterDoor_OpenHalf.003
+  - first:
+      74: -6618825309282493292
+    second: Plate Med|CounterDoubleAction
+  - first:
+      74: 1931092053513529902
+    second: Plate Med|CounterDoubleDoor_Open
+  - first:
+      74: 7976011414883939250
+    second: Plate Med|CounterDoubleDoor_OpenHalf
+  - first:
+      74: -532485169596491556
+    second: Plate Med|CounterSink_WaterRise
+  - first:
+      74: 1197264233519941265
+    second: Plate Med|CounterSinkAction
+  - first:
+      74: 7694616372835560188
+    second: Plate Med|CounterSinkWaterAction
+  - first:
+      74: -9155173062521666211
+    second: Plate Med|CubeAction
+  - first:
+      74: 1458980232779121686
+    second: Plate Med|CubeAction.002
+  - first:
+      74: -5365779254085703456
+    second: Plate Med|CylinderAction
+  - first:
+      74: -5562042469692749812
+    second: Plate Med|CylinderAction.001
+  - first:
+      74: 6173413295737507592
+    second: Plate Med|CylinderAction.002
+  - first:
+      74: -898584419251670341
+    second: Plate Med|CylinderAction.003
+  - first:
+      74: -7982380864858797529
+    second: Plate Med|CylinderAction.004
+  - first:
+      74: 4591736801904024631
+    second: Plate Med|CylinderAction.005
+  - first:
+      74: 5624784527047110100
+    second: Plate Med|Finish TableAction
+  - first:
+      74: 2851890243062143436
+    second: Plate Med|FridgeDoor_Open
+  - first:
+      74: 2529214855897459894
+    second: Plate Med|FridgeTopDoor_Open
+  - first:
+      74: -3766161323425946988
+    second: Plate Med|IslandAction
+  - first:
+      74: 614378468848818388
+    second: Plate Med|Knife_ARMAction
+  - first:
+      74: 5370481181690363470
+    second: Plate Med|KnifeAction
+  - first:
+      74: -2677807297375470662
+    second: Plate Med|KnifeBlockAction
+  - first:
+      74: -2095844525022629501
+    second: Plate Med|LightAction
+  - first:
+      74: -7643410042291234172
+    second: Plate Med|Painting1Action
+  - first:
+      74: -6221716834310935859
+    second: Plate Med|Painting2Action
+  - first:
+      74: 8898967708789450521
+    second: Plate Med|PanAction
+  - first:
+      74: -7495032874429018547
+    second: Plate Med|PanAction.001
+  - first:
+      74: 2180488966947993176
+    second: Plate Med|PanAction.002
+  - first:
+      74: 4803120688807139757
+    second: Plate Med|PanAction.003
+  - first:
+      74: 4603110067135163746
+    second: Plate Med|Plane.001Action
+  - first:
+      74: -575557700043006389
+    second: Plate Med|Plane.001Action.001
+  - first:
+      74: 7721500630070492808
+    second: Plate Med|Plane.002Action
+  - first:
+      74: 109223691222063928
+    second: Plate Med|Plate.001Action
+  - first:
+      74: 4447474462014764095
+    second: Plate Med|Plate.001Action.001
+  - first:
+      74: 5548639523622772118
+    second: Plate Med|PlateLargeAction
+  - first:
+      74: 8887353344909614916
+    second: Plate Med|Pot.001Action
+  - first:
+      74: -3150857846826106749
+    second: Plate Med|Showcase BGAction
+  - first:
+      74: -2430269612485055979
+    second: Plate Med|SinkNobAction
+  - first:
+      74: -838893751071228150
+    second: Plate Med|TrashAction
+  - first:
+      74: 4393913527282241593
+    second: Plate Med|Wine.002Action
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

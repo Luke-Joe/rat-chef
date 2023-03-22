@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: 5fd05039050700f46942dbd26d2898fb
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: 6033372859377709052
+    second: CounterSink|BowlAction
+  - first:
+      74: 6451622042142470999
+    second: CounterSink|BowlAction.001
+  - first:
+      74: 7346809656627995658
+    second: CounterSink|BowlAction.002
+  - first:
+      74: -6498084316509196842
+    second: CounterSink|CactusAction
+  - first:
+      74: 7822243661935560250
+    second: CounterSink|CactusAction.001
+  - first:
+      74: -6049054017946161477
+    second: CounterSink|Cereal_meshAction
+  - first:
+      74: -8319070125135863419
+    second: CounterSink|CoffeeCup_meshAction
+  - first:
+      74: 7916103559758450368
+    second: CounterSink|Counter.001Action.001
+  - first:
+      74: 1765395420127335606
+    second: CounterSink|CounterAction
+  - first:
+      74: -525737363567145300
+    second: CounterSink|CounterDoor_Open
+  - first:
+      74: -1515628164611903850
+    second: CounterSink|CounterDoor_Open.001
+  - first:
+      74: -1846659682540213110
+    second: CounterSink|CounterDoor_OpenHalf.003
+  - first:
+      74: 7861358013952711016
+    second: CounterSink|CounterDoubleAction
+  - first:
+      74: 6514855777206247175
+    second: CounterSink|CounterDoubleDoor_Open
+  - first:
+      74: -5382590298102214051
+    second: CounterSink|CounterDoubleDoor_OpenHalf
+  - first:
+      74: 5898480846773103597
+    second: CounterSink|CounterSinkAction
+  - first:
+      74: -2047095163229424864
+    second: CounterSink|CounterSinkWaterAction
+  - first:
+      74: 6971045378170675613
+    second: CounterSink|CubeAction.002
+  - first:
+      74: -3602134436571753516
+    second: CounterSink|CylinderAction
+  - first:
+      74: -7308424989858063204
+    second: CounterSink|CylinderAction.004
+  - first:
+      74: 762911819566827313
+    second: CounterSink|CylinderAction.005
+  - first:
+      74: -8478875719169041560
+    second: CounterSink|Finish TableAction
+  - first:
+      74: -6729730813710967267
+    second: CounterSink|FridgeDoor_Open
+  - first:
+      74: 2345900791550898548
+    second: CounterSink|FridgeTopDoor_Open
+  - first:
+      74: -3386556146171116189
+    second: CounterSink|IslandAction
+  - first:
+      74: -2097634340538299835
+    second: CounterSink|KnifeAction
+  - first:
+      74: 2927324778937005540
+    second: CounterSink|KnifeBlockAction
+  - first:
+      74: 1774226081977911779
+    second: CounterSink|LightAction
+  - first:
+      74: 2655433785462436563
+    second: CounterSink|Painting1Action
+  - first:
+      74: 2656573969221737839
+    second: CounterSink|Painting2Action
+  - first:
+      74: 8117664805675467075
+    second: CounterSink|PanAction
+  - first:
+      74: -6800018052691515660
+    second: CounterSink|PanAction.001
+  - first:
+      74: -6278900265748931704
+    second: CounterSink|PanAction.002
+  - first:
+      74: 1351100936908287625
+    second: CounterSink|PanAction.003
+  - first:
+      74: 2302569403911707511
+    second: CounterSink|Plane.002Action
+  - first:
+      74: 3161641002412714667
+    second: CounterSink|Plate.001Action
+  - first:
+      74: 594888567611753129
+    second: CounterSink|Plate.001Action.001
+  - first:
+      74: 112627886440062431
+    second: CounterSink|PlateLargeAction
+  - first:
+      74: 2727678782791949567
+    second: CounterSink|Pot.001Action
+  - first:
+      74: -1393208520126845070
+    second: CounterSink|Showcase BGAction
+  - first:
+      74: 20617061151592814
+    second: CounterSink|SinkNobAction
+  - first:
+      74: 88152516649731558
+    second: CounterSink|TrashAction
+  - first:
+      74: -3162358115648328789
+    second: CounterSink|Wine.002Action
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

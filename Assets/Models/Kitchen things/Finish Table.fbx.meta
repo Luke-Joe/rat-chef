@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: 86341f4e00532bc42a39c565773319d7
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -1223337170205666275
+    second: Finish Table|BowlAction
+  - first:
+      74: -5868186132286467680
+    second: Finish Table|BowlAction.001
+  - first:
+      74: -767864805261985916
+    second: Finish Table|BowlAction.002
+  - first:
+      74: 1465804891468374473
+    second: Finish Table|CactusAction
+  - first:
+      74: 8450728305937272370
+    second: Finish Table|CactusAction.001
+  - first:
+      74: -3240890884280040760
+    second: Finish Table|Cereal_meshAction
+  - first:
+      74: -6316525036907554459
+    second: Finish Table|CoffeeCup_meshAction
+  - first:
+      74: -1156725214361035354
+    second: Finish Table|Counter.001Action
+  - first:
+      74: -2372869422676655142
+    second: Finish Table|Counter.001Action.001
+  - first:
+      74: 7406572463376117783
+    second: Finish Table|CounterAction
+  - first:
+      74: 1446257186387724868
+    second: Finish Table|CounterDoor_Open
+  - first:
+      74: -8363231976785252502
+    second: Finish Table|CounterDoor_Open.001
+  - first:
+      74: 5112280947539606472
+    second: Finish Table|CounterDoor_OpenHalf
+  - first:
+      74: -6788552533677226258
+    second: Finish Table|CounterDoor_OpenHalf.001
+  - first:
+      74: 681274500569678903
+    second: Finish Table|CounterDoor_OpenHalf.003
+  - first:
+      74: -8982577595304490374
+    second: Finish Table|CounterDoubleAction
+  - first:
+      74: -8498002896705354911
+    second: Finish Table|CounterDoubleDoor_Open
+  - first:
+      74: -7027977912936250984
+    second: Finish Table|CounterDoubleDoor_OpenHalf
+  - first:
+      74: 2477774907057910849
+    second: Finish Table|CounterSink_WaterRise
+  - first:
+      74: 9012195650821670318
+    second: Finish Table|CounterSinkAction
+  - first:
+      74: -805585533007364081
+    second: Finish Table|CounterSinkWaterAction
+  - first:
+      74: -7356521472059898721
+    second: Finish Table|CubeAction
+  - first:
+      74: 7852308605097161823
+    second: Finish Table|CubeAction.002
+  - first:
+      74: -4129045288704071791
+    second: Finish Table|CylinderAction
+  - first:
+      74: 2592561810574228564
+    second: Finish Table|CylinderAction.001
+  - first:
+      74: -4762295666851739072
+    second: Finish Table|CylinderAction.002
+  - first:
+      74: 7619015450831366751
+    second: Finish Table|CylinderAction.003
+  - first:
+      74: -3973791745605750507
+    second: Finish Table|CylinderAction.004
+  - first:
+      74: 6018859506643056880
+    second: Finish Table|CylinderAction.005
+  - first:
+      74: -5258582470838351582
+    second: Finish Table|Finish TableAction
+  - first:
+      74: -6575830571461080461
+    second: Finish Table|FridgeDoor_Open
+  - first:
+      74: 6247994302325229051
+    second: Finish Table|FridgeTopDoor_Open
+  - first:
+      74: -6847299992353580631
+    second: Finish Table|IslandAction
+  - first:
+      74: -8352385718145334255
+    second: Finish Table|Knife_ARMAction
+  - first:
+      74: -2682502631220570341
+    second: Finish Table|KnifeAction
+  - first:
+      74: 1143960525788209270
+    second: Finish Table|KnifeBlockAction
+  - first:
+      74: -2829060430731986571
+    second: Finish Table|LightAction
+  - first:
+      74: -4738534035068639824
+    second: Finish Table|Painting1Action
+  - first:
+      74: -497324140655762827
+    second: Finish Table|Painting2Action
+  - first:
+      74: 3370017731288690315
+    second: Finish Table|PanAction
+  - first:
+      74: 7860300141233163458
+    second: Finish Table|PanAction.001
+  - first:
+      74: 3242251794338152515
+    second: Finish Table|PanAction.002
+  - first:
+      74: -2480636840529634213
+    second: Finish Table|PanAction.003
+  - first:
+      74: -2053959906491758229
+    second: Finish Table|Plane.001Action
+  - first:
+      74: -3262621670825405237
+    second: Finish Table|Plane.001Action.001
+  - first:
+      74: 8341375201607985908
+    second: Finish Table|Plane.002Action
+  - first:
+      74: -2193759207715186198
+    second: Finish Table|Plate.001Action
+  - first:
+      74: 642737773439132294
+    second: Finish Table|Plate.001Action.001
+  - first:
+      74: -4412695511307096703
+    second: Finish Table|PlateLargeAction
+  - first:
+      74: 7857622274926652420
+    second: Finish Table|Pot.001Action
+  - first:
+      74: -7354363963167846103
+    second: Finish Table|Showcase BGAction
+  - first:
+      74: 6988537155092122403
+    second: Finish Table|SinkNobAction
+  - first:
+      74: -6673615346518747377
+    second: Finish Table|TrashAction
+  - first:
+      74: 5968776724507256915
+    second: Finish Table|Wine.002Action
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -25,6 +25,7 @@ public class PlayerToggle : MonoBehaviour
             Instruction.SetActive(true);
             ToggleStove(hit);
             ToggleDoor(hit);
+            ToggleSink(hit);
         }
         else
         {
@@ -32,15 +33,28 @@ public class PlayerToggle : MonoBehaviour
         }
     }
 
-    void ToggleStove(RaycastHit hit)
+    void ToggleSink(RaycastHit hit)
     {
-        if (hit.collider.GetComponent<Stove>() != null)
+        if (hit.collider.GetComponent<Sink>() != null)
         {
-            Stove st = hit.collider.GetComponent<Stove>();
+            Sink st = hit.collider.GetComponent<Sink>();
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                st.KnobToggle();
+                st.ToggleSink();
+            }
+        }
+    }
+
+    void ToggleStove(RaycastHit hit)
+    {
+        if (hit.collider.GetComponent<StoveKnob>() != null)
+        {
+            StoveKnob sk = hit.collider.GetComponent<StoveKnob>();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                sk.KnobToggle();
             }
         }
     }

@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class IngredientHandler : MonoBehaviour
 {
     public Ingredient ingredient;
     private Rigidbody rb;
     public SFXPlaying source;
-
 
     public string ingredientName;
     public int quantity;
@@ -19,6 +19,9 @@ public class IngredientHandler : MonoBehaviour
     public float currBurn;
     public Dictionary<string, Seasoning> seasonings;
     private status previousState;
+    private bool prevCooked;
+
+    [SerializeField] private RatSpawner ratSpawn;
 
     // Constructor that takes in an ingredient
     public IngredientHandler(Ingredient ingredient)
@@ -41,6 +44,7 @@ public class IngredientHandler : MonoBehaviour
         this.seasonings = new Dictionary<string, Seasoning>();
         rb = this.GetComponent<Rigidbody>();
         rb.sleepThreshold = 0.0f;
+        this.prevCooked = false;
     }
 
     void Update()
@@ -55,6 +59,7 @@ public class IngredientHandler : MonoBehaviour
             case status.raw:
                 break;
             case status.cooked:
+                CookIndicator();
                 break;
             case status.burnt:
                 BurnObject();
@@ -92,9 +97,28 @@ public class IngredientHandler : MonoBehaviour
         // source.PlayPractice();
     }
 
+    private void CookIndicator()
+    {
+        if (this.state == status.cooked && !this.prevCooked)
+        {
+            // cookedEffect.transform.position = this.transform.position;
+            this.GetComponent<VisualEffect>().Play();
+
+            this.prevCooked = true;
+        }
+    }
+
+    public void TransferCook()
+    {
+        this.prevCooked = true;
+        this.state = status.cooked;
+    }
+
     public void CleanObject()
     {
         this.state = this.previousState;
+        this.GetComponent<MeshRenderer>().material.color = Color.cyan;
+        // STILL NEED TO REVERT COLOUR
     }
 
     private void OnCollisionEnter(Collision col)
@@ -102,6 +126,7 @@ public class IngredientHandler : MonoBehaviour
         if (col.gameObject.tag == "Floor")
         {
             DirtyObject();
+            ratSpawn.SpawnRat(this.transform);
         }
     }
 }

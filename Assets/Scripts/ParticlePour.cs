@@ -21,6 +21,8 @@ public class ParticlePour : MonoBehaviour
     {
         bool pourCheck = CalculatePourAngle() < pourThreshold;
 
+        Debug.Log(CalculatePourAngle());
+
         if (isPouring != pourCheck)
         {
             isPouring = pourCheck;

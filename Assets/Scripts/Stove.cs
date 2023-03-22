@@ -7,30 +7,18 @@ public class Stove : MonoBehaviour
     public int power;
     private Rigidbody rb;
     public Material Red;
-    public Material stoveMaterial;
-    public GameObject s;
+    private Material stoveMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
-        s = GameObject.Find("StoveTops");
         power = 0;
-        // changeStoveColour();
+        stoveMaterial = this.gameObject.GetComponent<Renderer>().material;
     }
 
-    public void KnobToggle()
+    void Update()
     {
-        Debug.Log("clicked knob");
-        if (power == 0)
-        {
-            power = 1;
-            changeStoveColour();
-        }
-        else
-        {
-            power = 0;
-            changeStoveColour();
-        }
+        changeStoveColour();
     }
 
     void changeStoveColour()
@@ -38,12 +26,11 @@ public class Stove : MonoBehaviour
 
         if (power == 1)
         {
-            s.GetComponent<Renderer>().material = Red;
+            this.GetComponent<Renderer>().material = Red;
         }
         else
         {
-            // GetComponent<Renderer>().material = stoveMaterial;
-            s.GetComponent<Renderer>().material = stoveMaterial;
+            this.GetComponent<Renderer>().material = stoveMaterial;
 
         }
     }

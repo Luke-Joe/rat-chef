@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: 010eb265a4c46d5459a4d6c0ddc25bf6
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: 5409150988514661905
+    second: Showcase BG|BowlAction
+  - first:
+      74: -5566128635751141965
+    second: Showcase BG|BowlAction.001
+  - first:
+      74: 3970681439720774262
+    second: Showcase BG|BowlAction.002
+  - first:
+      74: 4047159292066422165
+    second: Showcase BG|CactusAction
+  - first:
+      74: 8579316602416210164
+    second: Showcase BG|CactusAction.001
+  - first:
+      74: -703193901083740743
+    second: Showcase BG|Cereal_meshAction
+  - first:
+      74: -1333071300176800167
+    second: Showcase BG|CoffeeCup_meshAction
+  - first:
+      74: 2964343837317585704
+    second: Showcase BG|Counter.001Action
+  - first:
+      74: 8230235447516133514
+    second: Showcase BG|Counter.001Action.001
+  - first:
+      74: -3433131385089571452
+    second: Showcase BG|CounterAction
+  - first:
+      74: -8678311762772721630
+    second: Showcase BG|CounterDoor_Open
+  - first:
+      74: -1130060714145435496
+    second: Showcase BG|CounterDoor_Open.001
+  - first:
+      74: -7089582778177720419
+    second: Showcase BG|CounterDoor_OpenHalf
+  - first:
+      74: 6404537393753223342
+    second: Showcase BG|CounterDoor_OpenHalf.001
+  - first:
+      74: 4913057588123380590
+    second: Showcase BG|CounterDoor_OpenHalf.003
+  - first:
+      74: -8715426301751963060
+    second: Showcase BG|CounterDoubleAction
+  - first:
+      74: -1718610423229299147
+    second: Showcase BG|CounterDoubleDoor_Open
+  - first:
+      74: 893365885892383175
+    second: Showcase BG|CounterDoubleDoor_OpenHalf
+  - first:
+      74: 2757898299996247239
+    second: Showcase BG|CounterSink_WaterRise
+  - first:
+      74: 5624504328475269022
+    second: Showcase BG|CounterSinkAction
+  - first:
+      74: -2906037215379769577
+    second: Showcase BG|CounterSinkWaterAction
+  - first:
+      74: -2001895694339910120
+    second: Showcase BG|CubeAction
+  - first:
+      74: 5118816139442831258
+    second: Showcase BG|CubeAction.002
+  - first:
+      74: -6777207065112567347
+    second: Showcase BG|CylinderAction
+  - first:
+      74: -3917937743384990469
+    second: Showcase BG|CylinderAction.001
+  - first:
+      74: 6030359784623145685
+    second: Showcase BG|CylinderAction.002
+  - first:
+      74: 7704177890573118449
+    second: Showcase BG|CylinderAction.003
+  - first:
+      74: 6960749802189279243
+    second: Showcase BG|CylinderAction.004
+  - first:
+      74: 2390321900760620029
+    second: Showcase BG|CylinderAction.005
+  - first:
+      74: -6777089828633299304
+    second: Showcase BG|Finish TableAction
+  - first:
+      74: 906812586684186880
+    second: Showcase BG|FridgeDoor_Open
+  - first:
+      74: 4174171025183588145
+    second: Showcase BG|FridgeTopDoor_Open
+  - first:
+      74: 4039495950854691524
+    second: Showcase BG|IslandAction
+  - first:
+      74: 4227496605215016864
+    second: Showcase BG|Knife_ARMAction
+  - first:
+      74: -5449988813840321091
+    second: Showcase BG|KnifeAction
+  - first:
+      74: 2331894236337178584
+    second: Showcase BG|KnifeBlockAction
+  - first:
+      74: -5296889807625042438
+    second: Showcase BG|LightAction
+  - first:
+      74: -2323579805820206685
+    second: Showcase BG|Painting1Action
+  - first:
+      74: 1085452905633916089
+    second: Showcase BG|Painting2Action
+  - first:
+      74: 1249206519740101992
+    second: Showcase BG|PanAction
+  - first:
+      74: 7059808658048261121
+    second: Showcase BG|PanAction.001
+  - first:
+      74: 6509320316355002362
+    second: Showcase BG|PanAction.002
+  - first:
+      74: -4190790874553640442
+    second: Showcase BG|PanAction.003
+  - first:
+      74: 7463184592013914466
+    second: Showcase BG|Plane.001Action
+  - first:
+      74: 8737695762894758370
+    second: Showcase BG|Plane.001Action.001
+  - first:
+      74: 8639007710602574194
+    second: Showcase BG|Plane.002Action
+  - first:
+      74: -2674451359419021589
+    second: Showcase BG|Plate.001Action
+  - first:
+      74: -6271133894910826447
+    second: Showcase BG|Plate.001Action.001
+  - first:
+      74: 8359139780362351998
+    second: Showcase BG|PlateLargeAction
+  - first:
+      74: 7297922560093050716
+    second: Showcase BG|Pot.001Action
+  - first:
+      74: 68757797253744861
+    second: Showcase BG|Showcase BGAction
+  - first:
+      74: 4126735712178127434
+    second: Showcase BG|SinkNobAction
+  - first:
+      74: -2402701541472887787
+    second: Showcase BG|TrashAction
+  - first:
+      74: 8519932931485359950
+    second: Showcase BG|Wine.002Action
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
