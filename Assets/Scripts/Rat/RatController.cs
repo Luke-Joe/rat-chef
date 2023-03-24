@@ -175,7 +175,7 @@ public class RatController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<IngredientHandler>() != null && !hasFood)
+        if (collision.gameObject.GetComponent<IngredientHandler>() != null && !hasFood && !isCompleted)
         {
             GrabFood(collision.gameObject);
         }
