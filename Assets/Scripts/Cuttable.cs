@@ -26,21 +26,11 @@ public class Cuttable : MonoBehaviour
 
             IngredientHandler cih = child.GetComponent<IngredientHandler>();
 
-            // cih.state = ih.state;
-            // cih.prevCooked = ih.prevCooked;
-            // cih.currCook = (ih.currCook / ih.cookTime) * cih.cookTime;
-            // cih.currBurn = (ih.currBurn / ih.burnTime) * cih.burnTime;
-
             cih.TransferCook(ih.prevCooked,
             (ih.currCook / ih.cookTime) * cih.cookTime,
             (ih.currBurn / ih.burnTime) * cih.burnTime,
             ih.state,
             ih.seasonings);
-
-            // if (ih.state == status.dirty)
-            // {
-            //     child.GetComponent<IngredientHandler>().DirtyObject();
-            // }
         }
 
         Destroy(gameObject);
