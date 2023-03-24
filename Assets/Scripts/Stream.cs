@@ -13,8 +13,6 @@ public class Stream : MonoBehaviour
 
     [SerializeField]
     private float pourSpeed;
-    [SerializeField]
-    private Seasoning seasoning;
 
     private GameObject collision;
 

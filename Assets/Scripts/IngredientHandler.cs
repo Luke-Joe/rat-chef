@@ -19,9 +19,12 @@ public class IngredientHandler : MonoBehaviour
     public float currBurn;
     public Dictionary<string, Seasoning> seasonings;
     private status previousState;
-    private bool prevCooked;
+    public bool prevCooked;
+    private Color dirtyColor;
+    private Color burnColor;
+    private Color colorStatus;
 
-    [SerializeField] private RatSpawner ratSpawn;
+    private bool transferCompleted;
 
     // Constructor that takes in an ingredient
     public IngredientHandler(Ingredient ingredient)
@@ -35,16 +38,22 @@ public class IngredientHandler : MonoBehaviour
     {
         this.ingredientName = ingredient.ingredientName;
         this.quantity = ingredient.quantity;
-        this.state = ingredient.state;
         this.value = ingredient.value;
         this.cookTime = ingredient.cookTime;
         this.burnTime = ingredient.burnTime;
-        this.currCook = 0;
-        this.currBurn = 0;
-        this.seasonings = new Dictionary<string, Seasoning>();
         rb = this.GetComponent<Rigidbody>();
         rb.sleepThreshold = 0.0f;
-        this.prevCooked = false;
+        dirtyColor = Color.green;
+        burnColor = Color.black;
+
+        if (!transferCompleted)
+        {
+            this.state = ingredient.state;
+            this.prevCooked = false;
+            this.currCook = 0;
+            this.currBurn = 0;
+            this.seasonings = new Dictionary<string, Seasoning>();
+        }
     }
 
     void Update()
@@ -54,45 +63,49 @@ public class IngredientHandler : MonoBehaviour
 
     void StatusHandler()
     {
+
         switch (this.state)
         {
             case status.raw:
+                float colorIncrement = Mathf.Min(1 - ((currCook / cookTime) / 2), 1 - (currBurn / burnTime));
+                colorStatus = new Color(colorIncrement, colorIncrement, colorIncrement, 1.0f);
+                this.GetComponent<MeshRenderer>().material.color = colorStatus;
                 break;
             case status.cooked:
                 CookIndicator();
+                colorIncrement = Mathf.Min(1 - ((currCook / cookTime) / 2), 1 - (currBurn / burnTime));
+                colorStatus = new Color(colorIncrement, colorIncrement, colorIncrement, 1.0f);
+                this.GetComponent<MeshRenderer>().material.color = colorStatus;
                 break;
             case status.burnt:
-                BurnObject();
+                this.GetComponent<MeshRenderer>().material.color = burnColor;
                 break;
             case status.dirty:
-                DirtyObject();
+                // Very bad code -> Color increment is actually the increment here instead of the value to be inputted like above
+                colorIncrement = Mathf.Max(((currCook / cookTime) / 2), (currBurn / burnTime));
+
+                this.GetComponent<MeshRenderer>().material.color = dirtyColor - new Color(colorIncrement, colorIncrement, colorIncrement, 1.0f);
                 break;
         }
-    }
 
-    void BurnObject()
-    {
-        if (this.state == status.burnt)
+        if (this.state != status.dirty)
         {
-            Debug.Log("here");
-
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
-            // s.PlayA();
+            this.previousState = this.state;
         }
     }
 
     //Sets status of handler to dirty and makes appropriate visual changes
     public void DirtyObject()
     {
-        if (this.state != status.dirty)
+        if (this.state == status.burnt)
         {
-            this.previousState = this.state;
-            source.PlayBad();
-
+            return;
         }
 
-        this.GetComponent<MeshRenderer>().material.color = Color.gray;
         this.state = status.dirty;
+        source.PlayBad();
+
+
         // source.PlayBad();
         // source.PlayPractice();
     }
@@ -108,17 +121,20 @@ public class IngredientHandler : MonoBehaviour
         }
     }
 
-    public void TransferCook()
+    public void TransferCook(bool prevCooked, float currCook, float currBurn, status state, Dictionary<string, Seasoning> seasonings)
     {
-        this.prevCooked = true;
-        this.state = status.cooked;
+        this.prevCooked = prevCooked;
+        this.state = state;
+        this.currBurn = currBurn;
+        this.currCook = currCook;
+        this.seasonings = seasonings;
+        transferCompleted = true;
     }
 
     public void CleanObject()
     {
         this.state = this.previousState;
-        this.GetComponent<MeshRenderer>().material.color = Color.cyan;
-        // STILL NEED TO REVERT COLOUR
+        Debug.Log("cleaning");
     }
 
     private void OnCollisionEnter(Collision col)
@@ -126,7 +142,6 @@ public class IngredientHandler : MonoBehaviour
         if (col.gameObject.tag == "Floor")
         {
             DirtyObject();
-            ratSpawn.SpawnRat(this.transform);
         }
     }
 }

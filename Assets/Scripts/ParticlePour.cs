@@ -19,7 +19,7 @@ public class ParticlePour : MonoBehaviour
 
     void Update()
     {
-        bool pourCheck = CalculatePourAngle() < pourThreshold;
+        bool pourCheck = CalculatePourAngle() > pourThreshold;
 
         Debug.Log(CalculatePourAngle());
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Salt
   m_EditorClassIdentifier: 
   seasoningName: Salt
-  quantity: 0
+  quantity: 1

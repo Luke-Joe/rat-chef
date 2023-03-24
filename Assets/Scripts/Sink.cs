@@ -35,9 +35,12 @@ public class Sink : MonoBehaviour
 
     void EndPour()
     {
-        currentStream.End();
-        currentStream = null;
-        waterCollider.GetComponent<BoxCollider>().enabled = true;
+        if (currentStream != null)
+        {
+            currentStream.End();
+            currentStream = null;
+            waterCollider.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     private Stream CreateStream()

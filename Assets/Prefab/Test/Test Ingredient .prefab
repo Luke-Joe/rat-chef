@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: d436df63aedf3e149b217aaca61eb0ea, type: 2}
+  source: {fileID: 0}
   ingredientName: 
   quantity: 0
   state: 0

@@ -37,7 +37,7 @@ public class PlayerToggle : MonoBehaviour
     {
         if (hit.collider.GetComponent<Sink>() != null)
         {
-            Sink st = hit.collider.GetComponent<Sink>();
+            Sink st = hit.collider.GetComponentInParent<Sink>();
 
             if (Input.GetKeyDown(KeyCode.E))
             {
