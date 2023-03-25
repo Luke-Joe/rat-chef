@@ -6,7 +6,7 @@ using UnityEngine;
 public class Recipe : ScriptableObject
 {
     public string recipeName;
-    public Dictionary<string, Ingredient> Ingredients;
+    public List<GameObject> ingredients;
     public float maxScore;
     public float time;
 }

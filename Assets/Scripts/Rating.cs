@@ -6,13 +6,23 @@ public class Rating : MonoBehaviour
 {
     [SerializeField]
     private Recipe recipe;
-    public Dictionary<string, Ingredient> original;
-    public Ingredient[] prepared;
-    public List<Ingredient> extraneous;
+    public List<GameObject> original;
+    public List<GameObject> prepared;
+    private List<IngredientHandler> preparedIngredients;
+
+    public bool notFood;
+    public bool isSeasoned;
+
+    public float maxScore;
+    private float currScore;
 
     void Start()
     {
-        original = recipe.Ingredients;
+        foreach (var obj in recipe.ingredients)
+        {
+            original.Add(obj);
+        }
+
     }
 
     // Initialize an area that counts the ingredients prepared by the player
@@ -22,20 +32,50 @@ public class Rating : MonoBehaviour
     // The score is based on whether or not the ingredient is prepared, its value (cleanliness), and how much is present
     public float RateIngredients()
     {
-        float sum = 0;
+        maxScore = original.Count;
+        currScore = 0;
 
-        // for (int i = 0; i < prepared.Length; i++)
+        // Algorithm is O(n^2) but should be okay considering small size of both arrays. 
+        // This is done because dictionaries cant be handled by unity editor scriptable objects. 
+        for (int i = 0; i < prepared.Count; i++)
+        {
+            IngredientHandler ih = prepared[i].GetComponent<IngredientHandler>();
+            if (ih != null)
+            {
+                for (int j = 0; j < original.Count; j++)
+                {
+                    IngredientHandler orgIH = original[j].GetComponent<IngredientHandler>();
+                    Debug.Log(orgIH.ingredientName);
+                    Debug.Log(ih.ingredientName);
+                    if (orgIH.ingredientName == ih.ingredientName)
+                    {
+                        Debug.Log("FOUND");
+                    }
+                    else
+                    {
+                        Debug.Log("SUSSY");
+
+                    }
+                }
+            }
+            else
+            {
+                // IF NOT PLATE
+                notFood = true;
+            }
+        }
+
+        return currScore / maxScore;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        // if (other.GetComponent<IngredientHandler>() != null)
         // {
-        //     if (original.ContainsKey(prepared[i].name))
-        //     {
-        //         sum +=
-        //     }
-        //     else
-        //     {
-        //         extraneous.Add(prepared[i]);
-        //     }
+        //     prepared.Add(other.GetComponent<IngredientHandler>());
         // }
 
-        return sum;
+        prepared.Add(other.gameObject);
+        RateIngredients();
     }
 }

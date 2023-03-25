@@ -17,6 +17,8 @@ public class Trash : MonoBehaviour
         {
             IngredientHandler ih = other.GetComponent<IngredientHandler>();
 
+            ih.DirtyObject();
+
             ih.despawnTime -= Time.deltaTime;
 
             if (ih.despawnTime <= 0)

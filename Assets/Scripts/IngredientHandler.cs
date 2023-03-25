@@ -12,7 +12,7 @@ public class IngredientHandler : MonoBehaviour
     public string ingredientName;
     public int quantity;
     public status state;
-    public int value;
+    public float value;
     public float cookTime;
     public float burnTime;
     public float currCook;
@@ -35,14 +35,20 @@ public class IngredientHandler : MonoBehaviour
         Start();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         this.ingredientName = ingredient.ingredientName;
+        this.state = ingredient.state;
         this.quantity = ingredient.quantity;
         this.value = ingredient.value;
         this.cookTime = ingredient.cookTime;
         this.burnTime = ingredient.burnTime;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
         rb = this.GetComponent<Rigidbody>();
         rb.sleepThreshold = 0.0f;
         dirtyColor = Color.green;
@@ -63,6 +69,12 @@ public class IngredientHandler : MonoBehaviour
     void Update()
     {
         StatusHandler();
+        ValueHandler();
+    }
+
+    void ValueHandler()
+    {
+        this.value = 1f - (0.5f * (currBurn / burnTime));
     }
 
     void StatusHandler()
@@ -107,7 +119,7 @@ public class IngredientHandler : MonoBehaviour
         }
 
         this.state = status.dirty;
-        source.PlayBad();
+        // source.PlayBad();
 
     }
 
