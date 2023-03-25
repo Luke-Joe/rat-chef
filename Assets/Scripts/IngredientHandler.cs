@@ -18,6 +18,8 @@ public class IngredientHandler : MonoBehaviour
     public float currCook;
     public float currBurn;
     public Dictionary<string, Seasoning> seasonings;
+    public float despawnTime;
+    public float originalDespawn;
     private status previousState;
     public bool prevCooked;
     private Color dirtyColor;
@@ -45,6 +47,8 @@ public class IngredientHandler : MonoBehaviour
         rb.sleepThreshold = 0.0f;
         dirtyColor = Color.green;
         burnColor = Color.black;
+        this.despawnTime = 10f;
+        this.originalDespawn = this.despawnTime;
 
         if (!transferCompleted)
         {
