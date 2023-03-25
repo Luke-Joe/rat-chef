@@ -22,6 +22,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         startRotation = transform.rotation.eulerAngles;
+        source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
     }
 
     public void Open()

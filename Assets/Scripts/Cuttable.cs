@@ -7,7 +7,7 @@ public class Cuttable : MonoBehaviour
     public GameObject childIngredient;
     private IngredientHandler ih;
     public int num;
-    public SFXPlaying source;
+    // public SFXPlaying source;
 
 
     void Start()
@@ -37,6 +37,6 @@ public class Cuttable : MonoBehaviour
         }
 
         Destroy(gameObject);
-        source.PlayCutting();
+        // source.PlayCutting();
     }
 }

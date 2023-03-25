@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class KnifeCollision : MonoBehaviour
 {
-    public PlayerCut playerCut;
     public SFXPlaying source;
+
+    void Start()
+    {
+        source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,7 +21,7 @@ public class KnifeCollision : MonoBehaviour
                 // Debug.Log("CUT");
                 source.PlayCutting();
                 collision.gameObject.GetComponent<Cuttable>().Split(this.gameObject.transform);
-            
+
             }
         }
     }

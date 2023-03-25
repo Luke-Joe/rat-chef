@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Test
   ingredients:
-  - {fileID: 3504293649858698815, guid: f3ae1406d710b35489cb2c8f8d044aac, type: 3}
-  - {fileID: 1281127131399932043, guid: fa1f4a7c290e0fa4096cc03bcfa4116c, type: 3}
+  - {fileID: 11400000, guid: fb76355efa6df3a41abbca2b75d0ce30, type: 2}
+  - {fileID: 11400000, guid: f6e70388309ca164894235b71f06d4a3, type: 2}
   maxScore: 100
   time: 100

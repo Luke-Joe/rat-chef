@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/First.unity
     guid: 5705545b6d6e19241bda1a7eadc6bc37
+  - enabled: 1
+    path: Assets/Scenes/stars.unity
+    guid: 49ba07fb7fe26eb4eaa5f40420728b62
   - enabled: 0
     path: Assets/Scenes/nope.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

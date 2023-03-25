@@ -6,22 +6,25 @@ public class Rating : MonoBehaviour
 {
     [SerializeField]
     private Recipe recipe;
-    public List<GameObject> original;
+    public List<Ingredient> original;
     public List<GameObject> prepared;
     private List<IngredientHandler> preparedIngredients;
+
+    private List<IngredientHandler> wrongState;
+    private List<IngredientHandler> extraIngredients;
 
     public bool notFood;
     public bool isSeasoned;
 
-    public float maxScore;
+    private float maxScore;
     private float currScore;
 
     void Start()
     {
-        foreach (var obj in recipe.ingredients)
-        {
-            original.Add(obj);
-        }
+        original = recipe.ingredients;
+
+        wrongState = new List<IngredientHandler>();
+        extraIngredients = new List<IngredientHandler>();
 
     }
 
@@ -30,38 +33,62 @@ public class Rating : MonoBehaviour
 
     // Return a value between 0 and 1 indicating the players score based on ingredient usage
     // The score is based on whether or not the ingredient is prepared, its value (cleanliness), and how much is present
+
+    // Algorithm is O(n^2) but should be okay considering small size of both arrays. 
+    // This is done because dictionaries cant be handled by unity editor scriptable objects. 
     public float RateIngredients()
     {
-        maxScore = original.Count;
+        maxScore = original.Count + 2;
         currScore = 0;
 
-        // Algorithm is O(n^2) but should be okay considering small size of both arrays. 
-        // This is done because dictionaries cant be handled by unity editor scriptable objects. 
+
         for (int i = 0; i < prepared.Count; i++)
         {
             IngredientHandler ih = prepared[i].GetComponent<IngredientHandler>();
+
             if (ih != null)
             {
+
+                bool inOriginal = false;
+
                 for (int j = 0; j < original.Count; j++)
                 {
-                    IngredientHandler orgIH = original[j].GetComponent<IngredientHandler>();
-                    Debug.Log(orgIH.ingredientName);
-                    Debug.Log(ih.ingredientName);
-                    if (orgIH.ingredientName == ih.ingredientName)
+                    Ingredient orgI = original[0];
+                    if (orgI.ingredientName == ih.ingredientName)
                     {
-                        Debug.Log("FOUND");
-                    }
-                    else
-                    {
-                        Debug.Log("SUSSY");
+                        inOriginal = true;
+                        currScore += 0.5f;
+                        // +0.5 if state is correct
+                        // +0.5 if correct item
+                        // - 0.3 * how burnt food is
 
+                        if (orgI.state == ih.state)
+                        {
+                            currScore += 0.5f;
+                        }
+                        else
+                        {
+                            wrongState.Add(ih);
+                        }
+
+                        currScore -= 0.3f * (ih.currBurn / ih.burnTime);
+
+                        //NEED TO HANDLE SEASONINGS
                     }
+                }
+
+                if (!inOriginal)
+                {
+                    // Found a random ingredient
+                    extraIngredients.Add(ih);
+                    currScore -= 0.5f;
                 }
             }
             else
             {
                 // IF NOT PLATE
                 notFood = true;
+                currScore -= 0.5f;
             }
         }
 
@@ -70,11 +97,6 @@ public class Rating : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // if (other.GetComponent<IngredientHandler>() != null)
-        // {
-        //     prepared.Add(other.GetComponent<IngredientHandler>());
-        // }
-
         prepared.Add(other.gameObject);
         RateIngredients();
     }

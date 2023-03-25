@@ -55,6 +55,7 @@ public class IngredientHandler : MonoBehaviour
         burnColor = Color.black;
         this.despawnTime = 10f;
         this.originalDespawn = this.despawnTime;
+        source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
 
         if (!transferCompleted)
         {
