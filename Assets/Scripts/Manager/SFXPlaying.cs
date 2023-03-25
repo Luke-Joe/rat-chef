@@ -6,7 +6,6 @@ using static System.Random;
 
 public class SFXPlaying : MonoBehaviour
 {
-    // Start is called before the first frame update
     // bad
     public AudioSource ReallyTricky;
     public AudioSource IveGottaPractice;
@@ -36,6 +35,15 @@ public class SFXPlaying : MonoBehaviour
     public AudioSource n12;
     public AudioSource WeirdDream;
     public AudioSource kitchenDark;
+
+    //kitchen
+    public AudioSource cutting;
+    public AudioSource animal;
+    public AudioSource Door;
+    public AudioSource stoveOn;
+    public AudioSource finishedCooking;
+    public AudioSource water;
+
 
 
 
@@ -125,9 +133,29 @@ public class SFXPlaying : MonoBehaviour
 
     }
 
-    public void PlayWakeUp() {
-        HopeWakeUp.Play();
-        Debug.Log("Here");
+    public void PlayCutting() {
+        Debug.Log("play cutting");
+        cutting.Play();
+    }
+
+     public void PlayAnimal() {
+        animal.Play();
+    }
+
+     public void PlayStoveOn() {
+        stoveOn.Play();
+    }
+
+     public void PlayDoor() {
+        Door.Play();
+    }
+
+     public void PlayFinishedCooking() {
+        finishedCooking.Play();
+    }
+
+    public void PlayWater() {
+        water.Play();
     }
 
 }

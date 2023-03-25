@@ -5,12 +5,14 @@ using UnityEngine;
 public class StoveKnob : MonoBehaviour
 {
     public Stove stoveTop;
+    public SFXPlaying source;
 
     public void KnobToggle()
     {
         if (stoveTop.power == 0)
         {
             stoveTop.power = 1;
+            source.PlayStoveOn();
         }
         else
         {

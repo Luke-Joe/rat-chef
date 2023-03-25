@@ -11,6 +11,8 @@ public class Sink : MonoBehaviour
     public bool isActive = false;
     private Stream currentStream = null;
 
+    public SFXPlaying source;
+
     void Update()
     {
         if (isActive)
@@ -28,6 +30,7 @@ public class Sink : MonoBehaviour
 
     void StartPour()
     {
+        source.PlayWater();
         currentStream = CreateStream();
         currentStream.Begin();
         waterCollider.GetComponent<BoxCollider>().enabled = true;
