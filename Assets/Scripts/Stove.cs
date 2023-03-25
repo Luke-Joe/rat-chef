@@ -9,6 +9,8 @@ public class Stove : MonoBehaviour
     public Material Red;
     private Material stoveMaterial;
 
+    public IngredientHandler i;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -109,17 +109,17 @@ public class IngredientHandler : MonoBehaviour
         this.state = status.dirty;
         source.PlayBad();
 
-
-        // source.PlayBad();
-        // source.PlayPractice();
     }
 
     private void CookIndicator()
     {
         if (this.state == status.cooked && !this.prevCooked)
         {
+            Debug.Log("cooked");
             // cookedEffect.transform.position = this.transform.position;
             this.GetComponent<VisualEffect>().Play();
+            source.PlayFinishedCooking();
+            source.PlayGood();
 
             this.prevCooked = true;
         }

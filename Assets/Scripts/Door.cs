@@ -16,6 +16,7 @@ public class Door : MonoBehaviour
     private Coroutine animationCoroutine;
 
     private bool isMoving;
+    public SFXPlaying source;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class Door : MonoBehaviour
                 }
 
                 animationCoroutine = StartCoroutine(DoRotationOpen());
+                source.PlayDoor();
+
             }
 
         }
