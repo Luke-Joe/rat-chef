@@ -114,8 +114,10 @@ public class IngredientHandler : MonoBehaviour
     {
         if (this.state == status.cooked && !this.prevCooked)
         {
+            Debug.Log("cooked");
             // cookedEffect.transform.position = this.transform.position;
             this.GetComponent<VisualEffect>().Play();
+            source.PlayGood();
 
             this.prevCooked = true;
         }
