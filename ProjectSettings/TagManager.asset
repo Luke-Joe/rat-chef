@@ -8,6 +8,7 @@ TagManager:
   - Knife
   - Floor
   - AudioManager
+  - End
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Stove
   - Toggle
   - No Particle Collision
-  - 
+  - Final Model
   - 
   - 
   - 

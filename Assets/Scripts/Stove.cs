@@ -28,11 +28,11 @@ public class Stove : MonoBehaviour
 
         if (power == 1)
         {
-            this.GetComponent<Renderer>().material = Red;
+            this.GetComponent<Renderer>().material.color = Color.red;
         }
         else
         {
-            this.GetComponent<Renderer>().material = stoveMaterial;
+            this.GetComponent<Renderer>().material.color = Color.white;
 
         }
     }
