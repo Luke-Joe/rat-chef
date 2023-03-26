@@ -53,7 +53,7 @@ public class IngredientHandler : MonoBehaviour
         rb.sleepThreshold = 0.0f;
         dirtyColor = Color.green;
         burnColor = Color.black;
-        this.despawnTime = 15f;
+        this.despawnTime = 10f;
         this.originalDespawn = this.despawnTime;
         source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
 

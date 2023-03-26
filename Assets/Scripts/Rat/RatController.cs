@@ -9,8 +9,8 @@ public class RatController : MonoBehaviour
     public Transform food;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Transform ratMouth;
-    public Transform home;
-    public Transform despawnZone;
+    [SerializeField] private Transform home;
+    [SerializeField] private Transform despawnZone;
 
     private bool hasFood;
     private bool isCompleted;
@@ -38,8 +38,6 @@ public class RatController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        hasFood = false;
-        currPatrolTime = patrolTime;
     }
 
     void Update()
@@ -111,14 +109,7 @@ public class RatController : MonoBehaviour
         {
             if (hitCollider.gameObject.GetComponent<IngredientHandler>() != null && hitCollider.transform.position.y < vertRange)
             {
-                if (hitCollider.gameObject.GetComponentInParent<RatController>() == null && Vector3.Distance(hitCollider.transform.position, home.position) > 3f)
-                {
-                    food = hitCollider.gameObject.transform;
-                }
-                else
-                {
-                    food = null;
-                }
+                food = hitCollider.gameObject.transform;
             }
         }
     }
@@ -132,12 +123,10 @@ public class RatController : MonoBehaviour
             if (RandomPoint(transform.position, range, out point))
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-                movePosition = point;
             }
         }
 
         currPatrolTime -= Time.deltaTime;
-        // Debug.Log(agent.remainingDistance);
     }
 
     void CompletionCheck()
@@ -151,6 +140,7 @@ public class RatController : MonoBehaviour
 
     void DespawnCheck()
     {
+        Debug.Log(Vector3.Distance(gameObject.transform.position, despawnZone.position));
         if (Vector3.Distance(gameObject.transform.position, despawnZone.position) < 0.5f)
         {
             Destroy(gameObject);
@@ -193,40 +183,27 @@ public class RatController : MonoBehaviour
 
     void GrabFood(GameObject food)
     {
-        if (food.GetComponentInParent<RatController>() == null && Vector3.Distance(food.transform.position, home.position) > 3f)
-        {
-            hasFood = true;
-            heldObject = food;
-            Rigidbody foodRb = food.GetComponent<Rigidbody>();
-            foodRb.useGravity = false;
-            food.transform.SetParent(ratMouth);
-        }
-        else
-        {
-            food.transform.SetParent(null);
-        }
+        hasFood = true;
+        heldObject = food;
+        Rigidbody foodRb = food.GetComponent<Rigidbody>();
+        foodRb.useGravity = false;
+        food.transform.SetParent(ratMouth);
     }
 
     void MoveFood()
     {
-        if (hasFood)
-        {
-            heldObject.transform.position = ratMouth.transform.position;
-            heldObject.transform.rotation = ratMouth.transform.rotation;
-        }
+        heldObject.transform.position = ratMouth.transform.position;
+        heldObject.transform.rotation = ratMouth.transform.rotation;
     }
 
     public void DropFood()
     {
-        if (hasFood)
-        {
-            hasFood = false;
-            Rigidbody foodRb = heldObject.GetComponent<Rigidbody>();
-            foodRb.useGravity = true;
-            foodRb.isKinematic = false;
-            foodRb.AddForce(transform.forward * ratThrowForce, ForceMode.Impulse);
-            heldObject.transform.SetParent(null);
-            heldObject = null;
-        }
+        hasFood = false;
+        Rigidbody foodRb = heldObject.GetComponent<Rigidbody>();
+        foodRb.useGravity = true;
+        foodRb.isKinematic = false;
+        foodRb.AddForce(transform.forward * ratThrowForce, ForceMode.Impulse);
+        heldObject.transform.SetParent(null);
+        heldObject = null;
     }
 }

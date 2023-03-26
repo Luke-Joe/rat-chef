@@ -12,6 +12,10 @@ public class Sink : MonoBehaviour
     private Stream currentStream = null;
 
     public SFXPlaying source;
+        void Start()
+     {
+        source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
+    }
 
     void Update()
     {
