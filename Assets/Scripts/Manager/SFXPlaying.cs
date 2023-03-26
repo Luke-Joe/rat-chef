@@ -45,7 +45,7 @@ public class SFXPlaying : MonoBehaviour
     public AudioSource water;
 
 
-
+    public AudioSource pf1;
 
     public void Start() {
         n1.PlayDelayed(3.0f);
@@ -156,6 +156,10 @@ public class SFXPlaying : MonoBehaviour
 
     public void PlayWater() {
         water.Play();
+    }
+
+    public void PlayPF1() {
+        pf1.Play();
     }
 
 }
