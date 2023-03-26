@@ -16,16 +16,27 @@ public class Rating : MonoBehaviour
     public bool notFood;
     public bool isSeasoned;
 
+    public Transform modelHolder;
+
     private float maxScore;
     private float currScore;
 
     void Start()
     {
+        DontDestroyOnLoad(this);
         original = recipe.ingredients;
 
         wrongState = new List<IngredientHandler>();
         extraIngredients = new List<IngredientHandler>();
+    }
 
+    public void SaveIngredients()
+    {
+        for (int i = 0; i < prepared.Count; i++)
+        {
+            prepared[i].transform.SetParent(modelHolder);
+            DontDestroyOnLoad(prepared[i]);
+        }
     }
 
     // Initialize an area that counts the ingredients prepared by the player
@@ -38,6 +49,8 @@ public class Rating : MonoBehaviour
     // This is done because dictionaries cant be handled by unity editor scriptable objects. 
     public float RateIngredients()
     {
+        SaveIngredients();
+
         maxScore = original.Count + 2;
         currScore = 0;
 
@@ -98,6 +111,10 @@ public class Rating : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         prepared.Add(other.gameObject);
-        RateIngredients();
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        prepared.Remove(other.gameObject);
     }
 }
