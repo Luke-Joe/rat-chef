@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnifeCollision : MonoBehaviour
 {
-    public SFXPlaying source;
+    private SFXPlaying source;
 
     void Start()
     {
@@ -13,12 +13,10 @@ public class KnifeCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<IngredientHandler>() && collision.relativeVelocity.y > 2)
+        if (collision.gameObject.GetComponent<IngredientHandler>() && collision.relativeVelocity.y > 1.5f)
         {
-            Debug.Log(collision.gameObject.name);
             if (collision.gameObject.GetComponent<Cuttable>())
             {
-                // Debug.Log("CUT");
                 source.PlayCutting();
                 collision.gameObject.GetComponent<Cuttable>().Split(this.gameObject.transform);
 
