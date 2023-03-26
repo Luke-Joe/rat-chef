@@ -59,12 +59,12 @@ public class PlayerPickup : MonoBehaviour
 
     void DropObject()
     {
-        RatDrop();
-
         heldObjectRb.useGravity = true;
         heldObjectRb.drag = 1;
         heldObjectRb.constraints = RigidbodyConstraints.None;
         heldObject = null;
+
+        RatDrop();
     }
 
     void MoveObject()

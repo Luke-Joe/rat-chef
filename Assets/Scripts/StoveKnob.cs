@@ -7,6 +7,9 @@ public class StoveKnob : MonoBehaviour
     public Stove stoveTop;
     public SFXPlaying source;
 
+    void Start() {
+        source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
+    }
     public void KnobToggle()
     {
         if (stoveTop.power == 0)
