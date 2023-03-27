@@ -46,6 +46,10 @@ public class SFXPlaying : MonoBehaviour
 
 
     public AudioSource pf1;
+    public AudioSource pf2;
+
+    public bool waterPlaying;
+    
 
     public void Start() {
         n1.PlayDelayed(3.0f);
@@ -95,6 +99,8 @@ public class SFXPlaying : MonoBehaviour
 
         WeirdDream.PlayDelayed(460.0f);
 
+        
+        waterPlaying = false;
     }
 
     public void PlayBad() {
@@ -156,10 +162,20 @@ public class SFXPlaying : MonoBehaviour
 
     public void PlayWater() {
         water.Play();
+        waterPlaying = true;
+    }
+
+    public void StopWater() {
+        water.Stop();
+        waterPlaying = false;
     }
 
     public void PlayPF1() {
         pf1.Play();
     }
+    public void PlayPF2() {
+        pf2.Play();
+    }
+
 
 }

@@ -11,6 +11,8 @@ public class Sink : MonoBehaviour
     public bool isActive = false;
     private Stream currentStream = null;
 
+    AudioSource audioSource;
+
     public SFXPlaying source;
         void Start()
      {
@@ -24,11 +26,15 @@ public class Sink : MonoBehaviour
             if (currentStream == null)
             {
                 StartPour();
+                
+                
             }
         }
         else
         {
             EndPour();
+            source.StopWater();
+            
         }
     }
 

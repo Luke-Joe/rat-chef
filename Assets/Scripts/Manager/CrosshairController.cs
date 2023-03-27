@@ -12,7 +12,15 @@ public class CrosshairController : MonoBehaviour
     public float actionSize = 20f;
     public float jumpSize = 30f;
     public float speed = 15f;
-
+public GameObject TabMenuM;
+    public SFXPlaying source;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        TabMenuM.SetActive(false);
+        source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -35,6 +43,28 @@ public class CrosshairController : MonoBehaviour
         else
         {
             crosshair.GetComponentInChildren<Image>().color = Color.white;
+        }
+
+
+         if((Input.GetKeyDown(KeyCode.Tab)))
+        {
+            source.PlayPF2();
+            
+        }
+        if((Input.GetKeyUp(KeyCode.Tab)))
+        {
+            source.PlayPF1();
+            
+        }
+
+         if((Input.GetKey(KeyCode.Tab)))
+        {
+            TabMenuM.SetActive(true);
+            
+        } else
+        {
+            TabMenuM.SetActive(false);
+            
         }
     }
 }
