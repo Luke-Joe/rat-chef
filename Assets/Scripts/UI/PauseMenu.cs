@@ -34,19 +34,13 @@ public class PauseMenu : MonoBehaviour
         // }
     }
 
-    void Resume()
+    public void Resume()
     {
         Debug.Log("resumed");
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        AudioSource[] audios = FindObjectsOfType<AudioSource>();
-
-        foreach (AudioSource a in audios)
-        {
-            a.Play();
-        }
     }
 
     void Pause()
@@ -57,14 +51,15 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
         Debug.Log("paused");
 
+    }
 
-        AudioSource[] audios = FindObjectsOfType<AudioSource>();
-
-        foreach (AudioSource a in audios)
-        {
-            a.Pause();
-        }
+    public void PauseSettings()
+    {
 
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
