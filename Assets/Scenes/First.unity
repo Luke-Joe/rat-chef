@@ -17398,8 +17398,12 @@ PrefabInstance:
       value: Island
       objectReference: {fileID: 0}
     - target: {fileID: 3624101039283488802, guid: 71805559fd1c3ca4f8078fd4c9da0f47, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624101039283488802, guid: 71805559fd1c3ca4f8078fd4c9da0f47, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 4107480897852117656, guid: 71805559fd1c3ca4f8078fd4c9da0f47, type: 3}
       propertyPath: m_RootOrder
