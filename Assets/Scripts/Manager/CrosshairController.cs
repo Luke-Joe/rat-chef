@@ -15,10 +15,15 @@ public class CrosshairController : MonoBehaviour
 public GameObject TabMenuM;
     public SFXPlaying source;
     
+public bool hasTabbed;
+public GameObject tabSay;
+
     // Start is called before the first frame update
     void Start()
     {
         TabMenuM.SetActive(false);
+        tabSay.SetActive(true);
+        hasTabbed = false;
         source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
     }
 
@@ -60,11 +65,16 @@ public GameObject TabMenuM;
          if((Input.GetKey(KeyCode.Tab)))
         {
             TabMenuM.SetActive(true);
-            
+            hasTabbed = true;
         } else
         {
             TabMenuM.SetActive(false);
             
+        }
+
+        if (hasTabbed)
+        {
+            tabSay.SetActive(false);
         }
     }
 }
