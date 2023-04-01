@@ -5640,7 +5640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: {fileID: 0}
-  rotationSpeed: 0
+  rotationSpeed: 5
   ratMouth: {fileID: 1050834529}
   home: {fileID: 902238889}
   range: 5
