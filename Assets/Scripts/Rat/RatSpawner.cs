@@ -28,12 +28,12 @@ public class RatSpawner : MonoBehaviour
    {
     while (_spawning == true)
     {
-        yield return new WaitForSeconds(3); // wait 3 sec
+        yield return new WaitForSeconds(10); // wait 3 sec
         GameObject newRat = Instantiate(ratPrefab, this.transform.position, Quaternion.identity);
         RatController rc = newRat.GetComponent<RatController>();
-       // rc.home = this.transform;
-        //rc.despawnZone = this.despawnZone;
-        yield return new WaitForSeconds(10);
+        rc.home = this.transform;
+        rc.despawnZone = this.despawnZone;
+
     }
     }
 
