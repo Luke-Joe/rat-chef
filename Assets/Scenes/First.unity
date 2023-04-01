@@ -266,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4680439
 Transform:
   m_ObjectHideFlags: 0
@@ -4256,6 +4256,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 868177423059251467, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868177423059251467, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5049921594121859466, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4723,6 +4731,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 980921153405626861, guid: f8c3c0faebe8b7649bf33ccbad5cf1a0, type: 3}
   m_PrefabInstance: {fileID: 620431912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &620827493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2726804079443091186, guid: 824f14656377cb249b78c2d6ce7ce3ee, type: 3}
+  m_PrefabInstance: {fileID: 2023478769}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &627976585
 PrefabInstance:
@@ -5641,7 +5654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 0}
   rotationSpeed: 5
-  ratMouth: {fileID: 1050834529}
+  ratMouth: {fileID: 620827493}
   home: {fileID: 902238889}
   range: 5
   sightRange: 5
@@ -8848,11 +8861,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049883610}
   m_CullTransparentMesh: 1
---- !u!4 &1050834529 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2726804079443091186, guid: 824f14656377cb249b78c2d6ce7ce3ee, type: 3}
-  m_PrefabInstance: {fileID: 1442654003}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1060749974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10471,7 +10479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6378289252982805157, guid: 085988b22711dbf4db9a27d0daed1380, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.16
+      value: 5.08
       objectReference: {fileID: 0}
     - target: {fileID: 6378289252982805157, guid: 085988b22711dbf4db9a27d0daed1380, type: 3}
       propertyPath: m_LocalPosition.y
