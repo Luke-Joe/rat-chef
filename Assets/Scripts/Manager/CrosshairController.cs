@@ -12,17 +12,13 @@ public class CrosshairController : MonoBehaviour
     public float actionSize = 20f;
     public float jumpSize = 30f;
     public float speed = 15f;
-    public GameObject TabMenuM;
-    public GameObject tabOpenTxt;
+public GameObject TabMenuM;
     public SFXPlaying source;
-    public bool tabOpen;
     
     // Start is called before the first frame update
     void Start()
     {
         TabMenuM.SetActive(false);
-        tabOpenTxt.SetActive(true);
-        tabOpen = false;
         source = GameObject.FindGameObjectsWithTag("AudioManager")[0].GetComponent<SFXPlaying>();
     }
 
@@ -37,10 +33,7 @@ public class CrosshairController : MonoBehaviour
         {
             currentSize = Mathf.Lerp(currentSize, idleSize, Time.deltaTime * speed);
         }
-        if (tabOpen)
-        {
-            tabOpenTxt.SetActive(false);
-        }
+
         crosshair.sizeDelta = new Vector2(currentSize, currentSize);
 
         if (Input.GetButton("Fire2"))
@@ -67,7 +60,7 @@ public class CrosshairController : MonoBehaviour
          if((Input.GetKey(KeyCode.Tab)))
         {
             TabMenuM.SetActive(true);
-            tabOpen = true;
+            
         } else
         {
             TabMenuM.SetActive(false);
