@@ -11669,6 +11669,10 @@ PrefabInstance:
       propertyPath: home
       value: 
       objectReference: {fileID: 1155279333}
+    - target: {fileID: 2726804079205137305, guid: 824f14656377cb249b78c2d6ce7ce3ee, type: 3}
+      propertyPath: range
+      value: 23.28
+      objectReference: {fileID: 0}
     - target: {fileID: 2726804079205137306, guid: 824f14656377cb249b78c2d6ce7ce3ee, type: 3}
       propertyPath: m_RootOrder
       value: 2

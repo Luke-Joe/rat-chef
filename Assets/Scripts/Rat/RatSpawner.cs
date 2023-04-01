@@ -8,30 +8,33 @@ public class RatSpawner : MonoBehaviour
 
     [SerializeField] private float spawnInterval;
     public Transform despawnZone;
-    private float currSpawn;
+    private bool _spawning = true;
 
     void Start()
     {
-        currSpawn = spawnInterval;
+        StartCoroutine(SpawnRat()); 
+
     }
 
     void Update()
     {
-        currSpawn -= Time.deltaTime;
 
-        if (currSpawn <= 0)
         {
-            SpawnRat();
-            currSpawn = spawnInterval;
+            
         }
     }
 
-    public void SpawnRat()
+   IEnumerator SpawnRat()
+   {
+    while (_spawning == true)
     {
+        yield return new WaitForSeconds(3); // wait 3 sec
         GameObject newRat = Instantiate(ratPrefab, this.transform.position, Quaternion.identity);
         RatController rc = newRat.GetComponent<RatController>();
-        rc.home = this.transform;
-        rc.despawnZone = this.despawnZone;
+       // rc.home = this.transform;
+        //rc.despawnZone = this.despawnZone;
+        yield return new WaitForSeconds(10);
+    }
     }
 
     public void SpawnRat(Transform targetFood)
