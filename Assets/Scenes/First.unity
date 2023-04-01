@@ -5643,8 +5643,8 @@ MonoBehaviour:
   rotationSpeed: 0
   ratMouth: {fileID: 1050834529}
   home: {fileID: 902238889}
-  range: 0
-  sightRange: 0
+  range: 5
+  sightRange: 5
   vertRange: 0
   ratThrowForce: 0
 --- !u!1 &743566275
