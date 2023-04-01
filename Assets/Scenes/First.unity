@@ -4312,6 +4312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rat 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8482674973022545096, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
+      propertyPath: m_Name
+      value: RatMouth1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8577201576629813079, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
@@ -4731,11 +4735,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 980921153405626861, guid: f8c3c0faebe8b7649bf33ccbad5cf1a0, type: 3}
   m_PrefabInstance: {fileID: 620431912}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &620827493 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2726804079443091186, guid: 824f14656377cb249b78c2d6ce7ce3ee, type: 3}
-  m_PrefabInstance: {fileID: 2023478769}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &627976585
 PrefabInstance:
@@ -5654,12 +5653,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   food: {fileID: 0}
   rotationSpeed: 5
-  ratMouth: {fileID: 620827493}
+  ratMouth: {fileID: 1135681050}
   home: {fileID: 902238889}
   range: 5
   sightRange: 5
-  vertRange: 0
-  ratThrowForce: 0
+  vertRange: 1
+  ratThrowForce: 4
 --- !u!1 &743566275
 GameObject:
   m_ObjectHideFlags: 0
@@ -7055,7 +7054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902238888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.8189554, y: 2.2842247, z: 8.500663}
+  m_LocalPosition: {x: -5.8189554, y: 2.2842247, z: 7.186}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7074,8 +7073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec5a815d2f8bfa4ab20e2253d200304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratPrefab: {fileID: 6486029603493004968, guid: 66d2f1492e6c7d041ad045d16f2b2f7f, type: 3}
-  spawnInterval: 0
+  ratPrefab: {fileID: 728471293}
+  spawnInterval: 10
+  despawnZone: {fileID: 454215027}
 --- !u!4 &933268861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5049921594121859466, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
@@ -9666,6 +9666,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4513163440320646080, guid: c2def0dd3beeefa499120e5c55cfe6d8, type: 3}
   m_PrefabInstance: {fileID: 1131375780}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1135681050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5153610178565659206, guid: 5c296dc9b9ca8b54a8f010e3ea1509cf, type: 3}
+  m_PrefabInstance: {fileID: 580379752}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1149576427
 PrefabInstance:
